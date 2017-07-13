@@ -5,3 +5,9 @@
 ## Additional notes
 
 This project is neither affiliated with nor endorsed by Paperspace, Co.
+
+
+## Scratchpad
+
+    brew install swagger-codegen
+

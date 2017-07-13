@@ -1,0 +1,244 @@
+swagger: "2.0"
+info:
+  description: "Swagger representation of the Paperspace HTTP API"
+  version: "0.1.1"
+  title: "Paperspace"
+  termsOfService: ""
+  contact:
+    name: "Paperspace"
+    url: "https://paperspace.github.io/paperspace-node/"
+    email: "support@paperspace.com"
+host: "api.paperspace.io"
+basePath: "/"
+tags:
+- name: "machines"
+  description: "Manage Paperspace virtual machines"
+schemes:
+- "https"
+securityDefinitions:
+   APIKeyHeader:
+     type: apiKey
+     in: header
+     name: X-API-Key
+security:
+  - APIKeyHeader: []
+paths:
+  /machines/createSingleMachinePublic:
+    post:
+      tags:
+      - "machines"
+      summary: "Create and launch a new Paperspace virtual machine"
+      description: "Create a new Paperspace virtual machine. If you are using an individual account, you will be assigned as the owner of the machine. If you are a team administrator, you must specify who the machine should belong to, either by their user id, or their email address. If you pass a full set of user parameters, we will create a user within your team and assign them the machine. This action can only be performed by the account owner. (Team members cannot create machines themselves; only the team administrator may do so.)"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "params"
+        description: "Machine creation parameters"
+        required: true
+        schema:
+          $ref: "#/definitions/MachineCreationParameters"
+      responses:
+        201:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/CreatedMachineResponse"
+definitions:
+  MachineCreationParameters:
+    type: "object"
+    required:
+    - "region"
+    - "machineType"
+    - "size"
+    - "billingType"
+    - "machineName"
+    - "templateId"
+    properties:
+      region:
+        type: "string"
+        description: "Name of the region"
+        enum:
+        - "East Coast (NY2)"
+        - "West Coast (CA1)"
+      machineType:
+        type: "string"
+        enum:
+        - "Air"
+        - "Standard"
+        - "Pro"
+        - "Advanced"
+        - "GPU+"
+        - "P5000"
+        - "C1"
+        - "C2"
+        - "C3"
+        - "C4"
+        - "C5"
+        - "C6"
+        - "C7"
+        - "C8"
+        - "C9"
+        - "C10"
+      size:
+        type: "integer"
+        format: "int32"
+        description: "Storage size for the machine in GB"
+        example: 50
+      billingType:
+        type: "string"
+        description: "Either 'monthly' or 'hourly' billing"
+        enum:
+        - "hourly"
+        - "monthly"
+      machineName:
+        type: "string"
+        description: "A memorable name for this machine"
+        example: "My Machine 1"
+      templateId:
+        type: "string"
+        description: "Template id of the template to use for creating this machine"
+        example: "t123abc"
+      networkId:
+        type: "string"
+        description: "If creating on a specific network, specify its id"
+        example: "n123abc"
+      teamId:
+        type: "string"
+        description: "If creating the machine for a team, specify the team id"
+        example: "te456def"
+      userId:
+        type: "string"
+        description: "If assigning to an existing user other than yourself, specify the user id"
+        example: "u123abc"
+      email:
+        type: "string"
+        description: "If creating a new user for this machine, specify their email address"
+        example: "example@example.com"
+      password:
+        type: "string"
+        description: "If creating a new user, specify their password"
+        example: "secret123"
+      firstName:
+        type: "string"
+        description: "If creating a new user, specify their first name"
+        example: "Jon"
+      lastName:
+        type: "string"
+        description: "If creating a new user, specify their last name"
+        example: "Snow"
+      notificationEmail:
+        type: "string"
+        description: "Send a notification to this email address when complete"
+        example: "example@example.com"
+  CreatedMachineResponse:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+        description: ""
+        example: "ps123abc"
+      name:
+        type: "string"
+        description: ""
+        example: "My Machine 1"
+      os:
+        type: "string"
+        description: ""
+        example: null
+      ram:
+        type: "integer"
+        format: "int32"
+        description: ""
+        example: null
+      cpus:
+        type: "integer"
+        format: "int32"
+        description: ""
+        example: 1
+      gpu:
+        type: "string"
+        description: ""
+        example: null
+      storageTotal:
+        type: "integer"
+        format: "int32"
+        description: ""
+        example: null
+      storageUsed:
+        type: "integer"
+        format: "int32"
+        description: ""
+        example: null
+      usageRate:
+        type: "string"
+        description: ""
+        example: "Air hourly"
+      shutdownTimeoutInHours:
+        type: "integer"
+        format: "int32"
+        description: ""
+        example: 24
+      shutdownTimeoutForces:
+        type: "boolean"
+        description: ""
+        example: false
+      performAutoSnapshot:
+        type: "boolean"
+        description: ""
+        example: false
+      autoSnapshotFrequency:
+        type: "integer"
+        format: "int32"
+        description: ""
+        example: null
+      autoSnapshotSaveCount:
+        type: "integer"
+        format: "int32"
+        description: ""
+        example: null
+      agentType:
+        type: "string"
+        description: ""
+        example: "WindowsDesktop"
+      dtCreated:
+        type: "string"
+        format: "datetime"
+        description: ""
+        example: "2017-02-16T20:26:54.880Z"
+      state:
+        type: "string"
+        format: "datetime"
+        description: ""
+        example: "provisioning"
+      networkId:
+        type: "string"
+        description: ""
+        example: null
+      privateIpAddress:
+        type: "string"
+        description: ""
+        example: null
+      publicIpAddress:
+        type: "string"
+        description: ""
+        example: null
+      region:
+        type: "string"
+        description: ""
+        example: null
+        enum:
+        - "East Coast (NY2)"
+        - "West Coast (CA1)"
+      userId:
+        type: "string"
+        description: ""
+        example: "u123abc"
+      teamId:
+        type: "string"
+        description: ""
+        example: "te456def"
+externalDocs:
+  description: "Issue a bug or feature request"
+  url: "https://github.com/Paperspace/paperspace-node/issues/new"
