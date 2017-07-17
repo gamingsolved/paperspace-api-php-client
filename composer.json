@@ -17,5 +17,11 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^6.2.0"
+    },
+    "autoload": {
+        "psr-4": { "Swagger\\Client\\" : "src-generated/SwaggerClient-php/lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Swagger\\Client\\" : "src-generated/SwaggerClient-php/test/" }
     }
 }

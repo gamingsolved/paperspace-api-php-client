@@ -35,18 +35,18 @@ paths:
       - "application/json"
       parameters:
       - in: "body"
-        name: "params"
+        name: "MachineCreationParams"
         description: "Machine creation parameters"
         required: true
         schema:
-          $ref: "#/definitions/MachineCreationParameters"
+          $ref: "#/definitions/MachineCreationParams"
       responses:
         201:
           description: "Success"
           schema:
             $ref: "#/definitions/CreatedMachineResponse"
 definitions:
-  MachineCreationParameters:
+  MachineCreationParams:
     type: "object"
     required:
     - "region"
