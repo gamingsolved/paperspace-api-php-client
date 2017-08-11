@@ -5,16 +5,31 @@
 
 ## About
 
-This project provides *Open API Specification* compatible specs of the
+This project maintains *Open API Specification* compatible specs of the
 [Paperspace API](https://paperspace.github.io/paperspace-node/index.html), and uses these specs to auto-generate PHP
-clients based on [Guzzle](https://github.com/guzzle/guzzle) which can be used to work with the API.
+clients based on [Guzzle](https://github.com/guzzle/guzzle), which can be used to work with the API.
 
 The resulting clients are provided as a library through the Composer ecosystem via this repository. 
 
 
 ## Installation
 
-tbd
+Add the following to your `composer.json`:
+
+```
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/gamingsolved/paperspace-api-client.git"
+        }
+    ],
+    ...
+    "require": {
+        "gamingsolved/paperspace-api-client": "^0.0.1"
+    }
+```
+
+Then, run `composer update`.
 
 
 ## Usage
@@ -30,7 +45,7 @@ require_once('<path-to-vendor-folder>/autoload.php');
 Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 
 $api_instance = new Paperspace\Api\Client\Version0_1_3\Api\MachinesApi();
-$machineCreationParams = new \Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams(); // \Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams | Machine creation parameters
+$machineCreationParams = new \Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams();
 
 try {
   $result = $api_instance->machinesCreateSingleMachinePublicPost($machineCreationParams);
@@ -41,7 +56,17 @@ try {
 ```
 
 
-## How to modify and extend the API specification for the PHP client
+## Matching project versions and Paperspace API versions
+
+Use the following table as a reference to find out which version of this project supports what version of the Paperspace
+API:
+
+| Project version | Paperspace API version                       |
+|-----------------|----------------------------------------------|
+| 0.0.1           | 0.1.3 (only *machines/create*)               |
+
+
+## How to modify and extend the API specifications
 
 The PHP API clients provided by this project are generated automatically as far as possible (see below). To do so, this
 project manages [Open API Specification / Swagger](https://swagger.io/specification/) based definition of the
