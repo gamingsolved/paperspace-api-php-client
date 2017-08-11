@@ -1,5 +1,6 @@
 {
     "name": "gamingsolved/paperspace-api-client",
+    "version": "0.0.1",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -9,8 +10,6 @@
             "homepage": "http://manuel.kiessling.net"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "repositories": [
         {
             "type": "path",

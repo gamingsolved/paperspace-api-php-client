@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c287bf893f5e3159594c090f50a7f8e2",
+    "content-hash": "bcc27a5189f8f66be06f65d2d421e555",
     "packages": [
         {
             "name": "gamingsolved/paperspace-api-client-generated",
@@ -289,9 +289,9 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.5"
