@@ -11,17 +11,14 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./src-generated/paperspace-api-client/0.1.3"
+        }
+    ],
     "require": {
-        "php": ">=7.0.0",
-        "guzzlehttp/guzzle": "^6.2.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^6.2.0"
-    },
-    "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "src-generated/SwaggerClient-php/lib/" }
-    },
-    "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "src-generated/SwaggerClient-php/test/" }
+        "php": ">=5.5",
+        "gamingsolved/paperspace-api-client-generated": "0.1.3"
     }
 }

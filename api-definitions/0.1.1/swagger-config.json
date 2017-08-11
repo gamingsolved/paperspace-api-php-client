@@ -1,0 +1,8 @@
+{
+  "variableNamingConvention": "camelCase",
+  "invokerPackage": "Gamingsolved\\Paperspace\\Api\\Client\\Version0_1_1",
+  "packagePath": "",
+  "gitUserId": "gamingsolved",
+  "gitRepoId": "paperspace-api-client-generated",
+  "artifactVersion": "0.1.1"
+}
