@@ -62,7 +62,7 @@ API:
 
 | Project version | Paperspace API version                       |
 |-----------------|----------------------------------------------|
-| 0.1.0           | 0.1.3 (only *machines/create*)               |
+| 0.1.0           | 0.1.3 (only *machines/create* supported)     |
 
 
 ## How to modify and extend the API specifications
