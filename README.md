@@ -17,19 +17,18 @@ The resulting clients are provided as a library through the Composer ecosystem v
 Add the following to your `composer.json`:
 
 ```
+    ...
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/gamingsolved/paperspace-api-client.git"
+            "url": "https://github.com/gamingsolved/paperspace-api-php-client.git"
         }
     ],
+    "minimum-stability": "dev",
     ...
-    "require": {
-        "gamingsolved/paperspace-api-client": "^0.0.1"
-    }
 ```
 
-Then, run `composer update`.
+Then, run `composer require gamingsolved/paperspace-api-client`.
 
 
 ## Usage
