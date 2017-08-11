@@ -16,12 +16,12 @@ $autoloadDevStatements = '';
 foreach ($versions as $index => $version) {
     $autoloadStatements .= '            "Gamingsolved\\\Paperspace\\\Api\\\Client\\\Version'
         . str_replace('.', '_', $version)
-        . '\\\": "src-generated/paperspace-api-client/'
+        . '\\\": "src-generated/'
         . $version
         . '/lib/"';
     $autoloadDevStatements .= '            "Gamingsolved\\\Paperspace\\\Api\\\Client\\\Version'
         . str_replace('.', '_', $version)
-        . '\\\": "src-generated/paperspace-api-client/'
+        . '\\\": "src-generated/'
         . $version
         . '/test/"';
     if ($index < sizeof($versions) - 1) {

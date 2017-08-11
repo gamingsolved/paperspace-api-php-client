@@ -22,11 +22,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/gamingsolved/paperspace-api-client-generated.git"
+      "url": "https://github.com/gamingsolved/paperspace-api-php-client-generated.git"
     }
   ],
   "require": {
-    "gamingsolved/paperspace-api-client-generated": "*@dev"
+    "gamingsolved/paperspace-api-php-client-generated": "*@dev"
   }
 }
 ```

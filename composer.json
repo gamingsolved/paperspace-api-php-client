@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Gamingsolved\\Paperspace\\Api\\Client\\Version0_1_3\\": "src-generated/paperspace-api-client/0.1.3/lib/"
+            "Gamingsolved\\Paperspace\\Api\\Client\\Version0_1_3\\": "src-generated/0.1.3/lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Gamingsolved\\Paperspace\\Api\\Client\\Version0_1_3\\": "src-generated/paperspace-api-client/0.1.3/test/"
+            "Gamingsolved\\Paperspace\\Api\\Client\\Version0_1_3\\": "src-generated/0.1.3/test/"
         }
     }
 }
