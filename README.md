@@ -92,6 +92,13 @@ the reference for the definitions in `api-definitions/0.1.3/paperspace-api-swagg
 The API specs are defined per-API-version, that is, a spec exists for each Paperspace API version (one folder per
 version below `api-definitions`).
 
+In terms of style, naming, and structure, here are some guidelines for creating API definitions which stay true to the
+API while also resulting in a nicely usable PHP client:
+
+- top level client structure == top level API structure: `machines` -> `MachinesApi`
+- fluid method signatures through `operationId`: `MachinesApi->createMachine()`, `MachinesApi->listMachines()` 
+- Swagger definitions follow the overall naming convention: `MachinesApi::createMachine(new CreateMachineParams())` 
+
 
 ## How to auto-generate the API clients
 
