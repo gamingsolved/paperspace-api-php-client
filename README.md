@@ -73,7 +73,7 @@ API:
 
 | Project version | Paperspace API version                       |
 |-----------------|----------------------------------------------|
-| dev-master      | 0.1.3 (only *machines/create* supported)     |
+| dev-master      | 0.1.3 (only partly supported)                |
 
 
 ## How to modify and extend the API specifications
