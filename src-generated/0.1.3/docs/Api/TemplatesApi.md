@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **listTemplates**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesResponse listTemplates($listTemplatesParams)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[] listTemplates($listTemplatesParams)
 
 List information about all templates available
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesResponse**](../Model/ListTemplatesResponse.md)
+[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[]**](../Model/Template.md)
 
 ### Authorization
 

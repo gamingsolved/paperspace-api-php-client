@@ -89,7 +89,7 @@ class TemplatesApi
      * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams $listTemplatesParams An optional filter object to limit the returned template objects (optional)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesResponse
+     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[]
      */
     public function listTemplates($listTemplatesParams = null)
     {
@@ -105,11 +105,11 @@ class TemplatesApi
      * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams $listTemplatesParams An optional filter object to limit the returned template objects (optional)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[], HTTP status code, HTTP response headers (array of strings)
      */
     public function listTemplatesWithHttpInfo($listTemplatesParams = null)
     {
-        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesResponse';
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[]';
         $request = $this->listTemplatesRequest($listTemplatesParams);
 
         try {
@@ -145,9 +145,6 @@ class TemplatesApi
                 }
             }
 
-            $meh = ObjectSerializer::deserialize($content, $returnType, []);
-            print_r($meh);
-
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
@@ -157,7 +154,7 @@ class TemplatesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -192,7 +189,7 @@ class TemplatesApi
      */
     public function listTemplatesAsyncWithHttpInfo($listTemplatesParams = null)
     {
-        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesResponse';
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[]';
         $request = $this->listTemplatesRequest($listTemplatesParams);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {

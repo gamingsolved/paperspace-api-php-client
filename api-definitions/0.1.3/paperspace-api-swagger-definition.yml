@@ -51,7 +51,7 @@ paths:
         201:
           description: "Success"
           schema:
-            $ref: "#/definitions/CreateMachineResponse"
+            "$ref": "#/definitions/Machine"
   /machines/getMachines:
     get:
       operationId: "listMachines"
@@ -74,7 +74,9 @@ paths:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/ListMachinesResponse"
+            type: "array"
+            items:
+              "$ref": "#/definitions/Machine"
   /templates/getTemplates:
     get:
       operationId: "listTemplates"
@@ -97,7 +99,9 @@ paths:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/ListTemplatesResponse"
+            type: "array"
+            items:
+              $ref: "#/definitions/Template"
 definitions:
   Machine:
       type: "object"
@@ -349,8 +353,6 @@ definitions:
         type: "string"
         description: "The script id of a script to be run on startup"
         example: "sc123abc"
-  CreateMachineResponse:
-    "$ref": "#/definitions/Machine"
   ListMachinesParams:
     type: "object"
     properties:
@@ -431,10 +433,6 @@ definitions:
         type: "string"
         description: "Optional script datatime last run value to match on"
         example: "2017-02-16T20:26:54.880Z"
-  ListMachinesResponse:
-    type: "array"
-    items:
-      "$ref": "#/definitions/Machine"
   ListTemplatesParams:
       type: "object"
       properties:
@@ -463,7 +461,3 @@ definitions:
         region:
           type: "string"
           description: "Optional region to match on"
-  ListTemplatesResponse:
-    type: "array"
-    items:
-      "$ref": "#/definitions/Template"

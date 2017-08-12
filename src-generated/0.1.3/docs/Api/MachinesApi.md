@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createMachine**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse createMachine($createMachineParams)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine createMachine($createMachineParams)
 
 Create and launch a new Paperspace virtual machine
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse**](../Model/CreateMachineResponse.md)
+[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine**](../Model/Machine.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMachines**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse listMachines($listMachinesParams)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[] listMachines($listMachinesParams)
 
 List information about all machines available
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse**](../Model/ListMachinesResponse.md)
+[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]**](../Model/Machine.md)
 
 ### Authorization
 

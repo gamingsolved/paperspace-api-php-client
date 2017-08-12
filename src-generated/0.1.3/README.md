@@ -90,11 +90,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CreateMachineParams](docs/Model/CreateMachineParams.md)
- - [CreateMachineResponse](docs/Model/CreateMachineResponse.md)
  - [ListMachinesParams](docs/Model/ListMachinesParams.md)
- - [ListMachinesResponse](docs/Model/ListMachinesResponse.md)
  - [ListTemplatesParams](docs/Model/ListTemplatesParams.md)
- - [ListTemplatesResponse](docs/Model/ListTemplatesResponse.md)
  - [Machine](docs/Model/Machine.md)
  - [Template](docs/Model/Template.md)
 
