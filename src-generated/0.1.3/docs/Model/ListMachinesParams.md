@@ -1,4 +1,4 @@
-# MachinesListFilterParams
+# ListMachinesParams
 
 ## Properties
 Name | Type | Description | Notes

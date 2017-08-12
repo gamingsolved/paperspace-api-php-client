@@ -64,7 +64,7 @@ Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfigu
 // Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi();
-$machineCreationParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams | Machine creation parameters
+$machineCreationParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams | Machine creation parameters
 
 try {
     $result = $api_instance->createMachine($machineCreationParams);
@@ -88,11 +88,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [CreatedMachineResponse](docs/Model/CreatedMachineResponse.md)
+ - [CreateMachineParams](docs/Model/CreateMachineParams.md)
+ - [CreateMachineResponse](docs/Model/CreateMachineResponse.md)
+ - [ListMachinesParams](docs/Model/ListMachinesParams.md)
+ - [ListMachinesResponse](docs/Model/ListMachinesResponse.md)
  - [Machine](docs/Model/Machine.md)
- - [MachineCreationParams](docs/Model/MachineCreationParams.md)
- - [MachinesListFilterParams](docs/Model/MachinesListFilterParams.md)
- - [MachinesListResponse](docs/Model/MachinesListResponse.md)
 
 
 ## Documentation For Authorization

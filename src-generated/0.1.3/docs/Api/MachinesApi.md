@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createMachine**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreatedMachineResponse createMachine($machineCreationParams)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse createMachine($machineCreationParams)
 
 Create and launch a new Paperspace virtual machine
 
@@ -26,7 +26,7 @@ Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfigu
 // Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi(new \Http\Adapter\Guzzle6\Client());
-$machineCreationParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams | Machine creation parameters
+$machineCreationParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams | Machine creation parameters
 
 try {
     $result = $api_instance->createMachine($machineCreationParams);
@@ -41,11 +41,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **machineCreationParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams**](../Model/MachineCreationParams.md)| Machine creation parameters |
+ **machineCreationParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams**](../Model/CreateMachineParams.md)| Machine creation parameters |
 
 ### Return type
 
-[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreatedMachineResponse**](../Model/CreatedMachineResponse.md)
+[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse**](../Model/CreateMachineResponse.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMachines**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse listMachines($machinesListFilterParams)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse listMachines($machinesListFilterParams)
 
 List information about all machines available
 
@@ -76,7 +76,7 @@ Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfigu
 // Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi(new \Http\Adapter\Guzzle6\Client());
-$machinesListFilterParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams | An optional filter object to limit the returned machine objects
+$machinesListFilterParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams | An optional filter object to limit the returned machine objects
 
 try {
     $result = $api_instance->listMachines($machinesListFilterParams);
@@ -91,11 +91,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **machinesListFilterParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams**](../Model/MachineListFilterParams.md)| An optional filter object to limit the returned machine objects | [optional]
+ **machinesListFilterParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams**](../Model/ListMachinesParams.md)| An optional filter object to limit the returned machine objects | [optional]
 
 ### Return type
 
-[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse**](../Model/MachinesListResponse.md)
+[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse**](../Model/ListMachinesResponse.md)
 
 ### Authorization
 

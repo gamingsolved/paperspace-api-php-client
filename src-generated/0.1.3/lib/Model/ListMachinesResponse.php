@@ -1,6 +1,6 @@
 <?php
 /**
- * CreatedMachineResponse
+ * ListMachinesResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model;
 use \ArrayAccess;
 
 /**
- * CreatedMachineResponse Class Doc Comment
+ * ListMachinesResponse Class Doc Comment
  *
  * @category    Class
  * @package     Gamingsolved\Paperspace\Api\Client\Version0_1_3
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreatedMachineResponse implements ArrayAccess
+class ListMachinesResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class CreatedMachineResponse implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CreatedMachineResponse';
+    protected static $swaggerModelName = 'ListMachinesResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -141,7 +141,7 @@ class CreatedMachineResponse implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = [];
+        $invalid_properties = parent::listInvalidProperties();
 
         return $invalid_properties;
     }
@@ -154,6 +154,9 @@ class CreatedMachineResponse implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
         return true;
     }

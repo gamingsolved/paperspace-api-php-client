@@ -1,6 +1,6 @@
 <?php
 /**
- * MachinesListFilterParamsTest
+ * ListMachinesParamsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Gamingsolved\Paperspace\Api\Client\Version0_1_3;
 
 /**
- * MachinesListFilterParamsTest Class Doc Comment
+ * ListMachinesParamsTest Class Doc Comment
  *
  * @category    Class */
-// * @description MachinesListFilterParams
+// * @description ListMachinesParams
 /**
  * @package     Gamingsolved\Paperspace\Api\Client\Version0_1_3
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MachinesListFilterParamsTest extends \PHPUnit_Framework_TestCase
+class ListMachinesParamsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class MachinesListFilterParamsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "MachinesListFilterParams"
+     * Test "ListMachinesParams"
      */
-    public function testMachinesListFilterParams()
+    public function testListMachinesParams()
     {
     }
 

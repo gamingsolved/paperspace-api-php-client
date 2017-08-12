@@ -1,6 +1,6 @@
 <?php
 /**
- * MachinesListResponseTest
+ * ListMachinesResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Gamingsolved\Paperspace\Api\Client\Version0_1_3;
 
 /**
- * MachinesListResponseTest Class Doc Comment
+ * ListMachinesResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description MachinesListResponse
+// * @description ListMachinesResponse
 /**
  * @package     Gamingsolved\Paperspace\Api\Client\Version0_1_3
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MachinesListResponseTest extends \PHPUnit_Framework_TestCase
+class ListMachinesResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class MachinesListResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "MachinesListResponse"
+     * Test "ListMachinesResponse"
      */
-    public function testMachinesListResponse()
+    public function testListMachinesResponse()
     {
     }
 }

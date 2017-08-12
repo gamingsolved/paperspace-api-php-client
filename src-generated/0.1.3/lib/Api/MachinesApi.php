@@ -86,10 +86,10 @@ class MachinesApi
      *
      * Create and launch a new Paperspace virtual machine
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams $machineCreationParams Machine creation parameters (required)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams $machineCreationParams Machine creation parameters (required)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreatedMachineResponse
+     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse
      */
     public function createMachine($machineCreationParams)
     {
@@ -102,14 +102,14 @@ class MachinesApi
      *
      * Create and launch a new Paperspace virtual machine
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams $machineCreationParams Machine creation parameters (required)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams $machineCreationParams Machine creation parameters (required)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreatedMachineResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createMachineWithHttpInfo($machineCreationParams)
     {
-        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreatedMachineResponse';
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse';
         $request = $this->createMachineRequest($machineCreationParams);
 
         try {
@@ -154,7 +154,7 @@ class MachinesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreatedMachineResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -167,7 +167,7 @@ class MachinesApi
      *
      * Create and launch a new Paperspace virtual machine
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams $machineCreationParams Machine creation parameters (required)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams $machineCreationParams Machine creation parameters (required)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
@@ -183,13 +183,13 @@ class MachinesApi
      *
      * Create and launch a new Paperspace virtual machine
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams $machineCreationParams Machine creation parameters (required)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams $machineCreationParams Machine creation parameters (required)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createMachineAsyncWithHttpInfo($machineCreationParams)
     {
-        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreatedMachineResponse';
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse';
         $request = $this->createMachineRequest($machineCreationParams);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
@@ -223,7 +223,7 @@ class MachinesApi
     /**
      * Create request for operation 'createMachine'
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams $machineCreationParams Machine creation parameters (required)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams $machineCreationParams Machine creation parameters (required)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
@@ -316,10 +316,10 @@ class MachinesApi
      *
      * List information about all machines available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse
+     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse
      */
     public function listMachines($machinesListFilterParams = null)
     {
@@ -332,14 +332,14 @@ class MachinesApi
      *
      * List information about all machines available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listMachinesWithHttpInfo($machinesListFilterParams = null)
     {
-        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse';
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse';
         $request = $this->listMachinesRequest($machinesListFilterParams);
 
         try {
@@ -384,7 +384,7 @@ class MachinesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -397,7 +397,7 @@ class MachinesApi
      *
      * List information about all machines available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
@@ -413,13 +413,13 @@ class MachinesApi
      *
      * List information about all machines available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function listMachinesAsyncWithHttpInfo($machinesListFilterParams = null)
     {
-        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse';
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse';
         $request = $this->listMachinesRequest($machinesListFilterParams);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
@@ -453,7 +453,7 @@ class MachinesApi
     /**
      * Create request for operation 'listMachines'
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $machinesListFilterParams An optional filter object to limit the returned machine objects (optional)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */

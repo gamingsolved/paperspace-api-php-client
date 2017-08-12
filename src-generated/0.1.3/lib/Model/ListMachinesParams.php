@@ -1,6 +1,6 @@
 <?php
 /**
- * MachinesListFilterParams
+ * ListMachinesParams
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model;
 use \ArrayAccess;
 
 /**
- * MachinesListFilterParams Class Doc Comment
+ * ListMachinesParams Class Doc Comment
  *
  * @category    Class
  * @package     Gamingsolved\Paperspace\Api\Client\Version0_1_3
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MachinesListFilterParams implements ArrayAccess
+class ListMachinesParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class MachinesListFilterParams implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'MachinesListFilterParams';
+    protected static $swaggerModelName = 'ListMachinesParams';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

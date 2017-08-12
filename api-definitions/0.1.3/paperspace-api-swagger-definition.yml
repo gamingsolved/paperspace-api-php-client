@@ -46,12 +46,12 @@ paths:
         description: "Machine creation parameters"
         required: true
         schema:
-          $ref: "#/definitions/MachineCreationParams"
+          $ref: "#/definitions/CreateMachineParams"
       responses:
         201:
           description: "Success"
           schema:
-            $ref: "#/definitions/CreatedMachineResponse"
+            $ref: "#/definitions/CreateMachineResponse"
   /machines/getMachines:
     get:
       operationId: "listMachines"
@@ -69,12 +69,12 @@ paths:
         description: "An optional filter object to limit the returned machine objects"
         required: false
         schema:
-          $ref: "#/definitions/MachineListFilterParams"
+          $ref: "#/definitions/ListMachinesParams"
       responses:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/MachinesListResponse"
+            $ref: "#/definitions/ListMachinesResponse"
 definitions:
   Machine:
       type: "object"
@@ -191,7 +191,7 @@ definitions:
           type: "string"
           description: ""
           example: "2017-06-30T07:22:49.763Z"
-  MachineCreationParams:
+  CreateMachineParams:
     type: "object"
     required:
     - "region"
@@ -285,9 +285,9 @@ definitions:
         type: "string"
         description: "The script id of a script to be run on startup"
         example: "sc123abc"
-  CreatedMachineResponse:
+  CreateMachineResponse:
     "$ref": "#/definitions/Machine"
-  MachinesListFilterParams:
+  ListMachinesParams:
     type: "object"
     properties:
       machineId:
@@ -367,7 +367,7 @@ definitions:
         type: "string"
         description: "Optional script datatime last run value to match on"
         example: "2017-02-16T20:26:54.880Z"
-  MachinesListResponse:
+  ListMachinesResponse:
     type: "array"
     items:
       "$ref": "#/definitions/Machine"

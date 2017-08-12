@@ -47,18 +47,18 @@ use Gamingsolved\Paperspace\Api\Client\Version0_1_3 as PaperspaceApiClient;
 $config = PaperspaceApiClient\Configuration::getDefaultConfiguration();
 $config->setApiKey('X-API-Key', 'your-api-key-here');
 
-$machineCreationParams = new PaperspaceApiClient\Model\MachineCreationParams();
-$machineCreationParams->setRegion('East Coast (NY2)');
-$machineCreationParams->setMachineType('Air');
-$machineCreationParams->setSize(50);
-$machineCreationParams->setBillingType('hourly');
-$machineCreationParams->setMachineName('My first machine');
-$machineCreationParams->setTemplateId('t123abc');
+$createMachineParams = new PaperspaceApiClient\Model\CreateMachineParams();
+$createMachineParams->setRegion('East Coast (NY2)');
+$createMachineParams->setMachineType('Air');
+$createMachineParams->setSize(50);
+$createMachineParams->setBillingType('hourly');
+$createMachineParams->setMachineName('My first machine');
+$createMachineParams->setTemplateId('t123abc');
 
 $machinesApiClient = new PaperspaceApiClient\Api\MachinesApi(null, $config);
 
 try {
-  $result = $machinesApi->createMachine($machineCreationParams);
+  $result = $machinesApi->createMachine($createMachineParams);
   print_r($result);
 } catch (\Exception $e) {
   echo 'Exception when calling MachinesApi->createMachine: ', $e->getMessage(), PHP_EOL;

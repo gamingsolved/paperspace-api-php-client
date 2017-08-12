@@ -1,6 +1,6 @@
 <?php
 /**
- * MachineCreationParamsTest
+ * CreateMachineParamsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Gamingsolved\Paperspace\Api\Client\Version0_1_3;
 
 /**
- * MachineCreationParamsTest Class Doc Comment
+ * CreateMachineParamsTest Class Doc Comment
  *
  * @category    Class */
-// * @description MachineCreationParams
+// * @description CreateMachineParams
 /**
  * @package     Gamingsolved\Paperspace\Api\Client\Version0_1_3
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MachineCreationParamsTest extends \PHPUnit_Framework_TestCase
+class CreateMachineParamsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class MachineCreationParamsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "MachineCreationParams"
+     * Test "CreateMachineParams"
      */
-    public function testMachineCreationParams()
+    public function testCreateMachineParams()
     {
     }
 

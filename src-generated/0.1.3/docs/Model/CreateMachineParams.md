@@ -1,4 +1,4 @@
-# MachineCreationParams
+# CreateMachineParams
 
 ## Properties
 Name | Type | Description | Notes

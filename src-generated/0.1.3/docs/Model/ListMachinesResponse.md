@@ -1,4 +1,4 @@
-# CreatedMachineResponse
+# ListMachinesResponse
 
 ## Properties
 Name | Type | Description | Notes

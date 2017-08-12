@@ -1,6 +1,6 @@
 <?php
 /**
- * MachineCreationParams
+ * CreateMachineParams
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model;
 use \ArrayAccess;
 
 /**
- * MachineCreationParams Class Doc Comment
+ * CreateMachineParams Class Doc Comment
  *
  * @category    Class
  * @package     Gamingsolved\Paperspace\Api\Client\Version0_1_3
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MachineCreationParams implements ArrayAccess
+class CreateMachineParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class MachineCreationParams implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'MachineCreationParams';
+    protected static $swaggerModelName = 'CreateMachineParams';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
