@@ -53,7 +53,7 @@ $createMachineParams->setMachineType('Air');
 $createMachineParams->setSize(50);
 $createMachineParams->setBillingType('hourly');
 $createMachineParams->setMachineName('My first machine');
-$createMachineParams->setTemplateId('t123abc');
+$createMachineParams->setTemplateId('t23ol2r'); // Windows 10 (Server 2016) Quadro - Licensed
 
 $machinesApiClient = new PaperspaceApiClient\Api\MachinesApi(null, $config);
 

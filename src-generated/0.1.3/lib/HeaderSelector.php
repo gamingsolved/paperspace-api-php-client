@@ -12,7 +12,7 @@
 /**
  * Paperspace REST API
  *
- * Inofficial Swagger representation of the Paperspace REST API, provided by the GamingSolved project.
+ * Inofficial Swagger representation of the [Paperspace REST API](https://paperspace.github.io/paperspace-node/), provided by the [GamingSolved](https://github.com/gamingsolved/paperspace-api-php-client) project.
  *
  * OpenAPI spec version: 0.1.3
  * Contact: support@paperspace.com

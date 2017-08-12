@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateMachineResponseTest
+ * ListTemplatesResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Gamingsolved\Paperspace\Api\Client\Version0_1_3;
 
 /**
- * CreateMachineResponseTest Class Doc Comment
+ * ListTemplatesResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description CreateMachineResponse
+// * @description ListTemplatesResponse
 /**
  * @package     Gamingsolved\Paperspace\Api\Client\Version0_1_3
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateMachineResponseTest extends \PHPUnit_Framework_TestCase
+class ListTemplatesResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class CreateMachineResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CreateMachineResponse"
+     * Test "ListTemplatesResponse"
      */
-    public function testCreateMachineResponse()
+    public function testListTemplatesResponse()
     {
     }
 }

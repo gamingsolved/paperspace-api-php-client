@@ -1,0 +1,17 @@
+# Template
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** |  | 
+**name** | **string** |  | 
+**label** | **string** |  | 
+**os** | **string** |  | 
+**dtCreated** | **string** |  | 
+**teamId** | **string** | Only for team-owned templates | [optional] 
+**userId** | **string** | Only for team-owned templates | [optional] 
+**region** | **string** | Only for team-owned templates | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

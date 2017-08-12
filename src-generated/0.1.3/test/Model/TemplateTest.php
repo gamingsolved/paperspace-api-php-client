@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateMachineResponseTest
+ * TemplateTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Gamingsolved\Paperspace\Api\Client\Version0_1_3;
 
 /**
- * CreateMachineResponseTest Class Doc Comment
+ * TemplateTest Class Doc Comment
  *
  * @category    Class */
-// * @description CreateMachineResponse
+// * @description Template
 /**
  * @package     Gamingsolved\Paperspace\Api\Client\Version0_1_3
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateMachineResponseTest extends \PHPUnit_Framework_TestCase
+class TemplateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,65 @@ class CreateMachineResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CreateMachineResponse"
+     * Test "Template"
      */
-    public function testCreateMachineResponse()
+    public function testTemplate()
+    {
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "label"
+     */
+    public function testPropertyLabel()
+    {
+    }
+
+    /**
+     * Test attribute "os"
+     */
+    public function testPropertyOs()
+    {
+    }
+
+    /**
+     * Test attribute "dtCreated"
+     */
+    public function testPropertyDtCreated()
+    {
+    }
+
+    /**
+     * Test attribute "teamId"
+     */
+    public function testPropertyTeamId()
+    {
+    }
+
+    /**
+     * Test attribute "userId"
+     */
+    public function testPropertyUserId()
+    {
+    }
+
+    /**
+     * Test attribute "region"
+     */
+    public function testPropertyRegion()
     {
     }
 }

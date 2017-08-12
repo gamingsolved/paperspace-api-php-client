@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createMachine**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse createMachine($machineCreationParams)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineResponse createMachine($createMachineParams)
 
 Create and launch a new Paperspace virtual machine
 
@@ -26,10 +26,10 @@ Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfigu
 // Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi(new \Http\Adapter\Guzzle6\Client());
-$machineCreationParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams | Machine creation parameters
+$createMachineParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams | Machine creation parameters
 
 try {
-    $result = $api_instance->createMachine($machineCreationParams);
+    $result = $api_instance->createMachine($createMachineParams);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MachinesApi->createMachine: ', $e->getMessage(), PHP_EOL;
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **machineCreationParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams**](../Model/CreateMachineParams.md)| Machine creation parameters |
+ **createMachineParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreateMachineParams**](../Model/CreateMachineParams.md)| Machine creation parameters |
 
 ### Return type
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMachines**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse listMachines($machinesListFilterParams)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesResponse listMachines($listMachinesParams)
 
 List information about all machines available
 
@@ -76,10 +76,10 @@ Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfigu
 // Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi(new \Http\Adapter\Guzzle6\Client());
-$machinesListFilterParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams | An optional filter object to limit the returned machine objects
+$listMachinesParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams | An optional filter object to limit the returned machine objects
 
 try {
-    $result = $api_instance->listMachines($machinesListFilterParams);
+    $result = $api_instance->listMachines($listMachinesParams);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MachinesApi->listMachines: ', $e->getMessage(), PHP_EOL;
@@ -91,7 +91,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **machinesListFilterParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams**](../Model/ListMachinesParams.md)| An optional filter object to limit the returned machine objects | [optional]
+ **listMachinesParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams**](../Model/ListMachinesParams.md)| An optional filter object to limit the returned machine objects | [optional]
 
 ### Return type
 
