@@ -106,7 +106,7 @@ The PHP API clients are generated using [swagger-codegen](https://github.com/swa
 
 A definition file `api-definitions/<api-version>/paperspace-api-swagger-definition.yml` serves as the input
 specification, and generated sources are placed in
-`src-generated/paperspace-api-swagger-generated-client/<api-version>`.
+`src-generated/<api-version>`.
 
 In order to (re-)generate the code for all clients, proceed as follows:
 
