@@ -5,7 +5,7 @@
 
 ## About
 
-This project maintains *Open API Specification* compatible specs of the
+This project maintains inofficial *Open API Specification* compatible specs of the
 [Paperspace API](https://paperspace.github.io/paperspace-node/index.html), and uses these specs to auto-generate PHP
 clients based on [Guzzle](https://github.com/guzzle/guzzle), which can be used to work with the API.
 
@@ -54,13 +54,13 @@ $machineCreationParams->setBillingType('hourly');
 $machineCreationParams->setMachineName('My first machine');
 $machineCreationParams->setTemplateId('t123abc');
 
-$api_instance = new PaperspaceApiClient\Api\MachinesApi();
+$machinesApi = new PaperspaceApiClient\Api\MachinesApi();
 
 try {
-  $result = $api_instance->machinesCreateSingleMachinePublicPost($machineCreationParams);
+  $result = $machinesApi->createMachine($machineCreationParams);
   print_r($result);
 } catch (\Exception $e) {
-  echo 'Exception when calling MachinesApi->machinesCreateSingleMachinePublicPost: ', $e->getMessage(), PHP_EOL;
+  echo 'Exception when calling MachinesApi->createMachine: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

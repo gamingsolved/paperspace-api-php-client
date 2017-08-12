@@ -4,12 +4,12 @@ All URIs are relative to *https://api.paperspace.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**machinesCreateSingleMachinePublicPost**](MachinesApi.md#machinesCreateSingleMachinePublicPost) | **POST** /machines/createSingleMachinePublic | Create and launch a new Paperspace virtual machine
-[**machinesGetMachinesGet**](MachinesApi.md#machinesGetMachinesGet) | **GET** /machines/getMachines | List information about all machines available
+[**createMachine**](MachinesApi.md#createMachine) | **POST** /machines/createSingleMachinePublic | Create and launch a new Paperspace virtual machine
+[**listMachines**](MachinesApi.md#listMachines) | **GET** /machines/getMachines | List information about all machines available
 
 
-# **machinesCreateSingleMachinePublicPost**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreatedMachineResponse machinesCreateSingleMachinePublicPost($machineCreationParams)
+# **createMachine**
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\CreatedMachineResponse createMachine($machineCreationParams)
 
 Create and launch a new Paperspace virtual machine
 
@@ -29,10 +29,10 @@ $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\Machines
 $machineCreationParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams | Machine creation parameters
 
 try {
-    $result = $api_instance->machinesCreateSingleMachinePublicPost($machineCreationParams);
+    $result = $api_instance->createMachine($machineCreationParams);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MachinesApi->machinesCreateSingleMachinePublicPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MachinesApi->createMachine: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **machinesGetMachinesGet**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse machinesGetMachinesGet($machineListFilterParams)
+# **listMachines**
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse listMachines($machinesListFilterParams)
 
 List information about all machines available
 
@@ -76,13 +76,13 @@ Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfigu
 // Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi(new \Http\Adapter\Guzzle6\Client());
-$machineListFilterParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams | An optional filter object to limit the returned machine objects
+$machinesListFilterParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams | An optional filter object to limit the returned machine objects
 
 try {
-    $result = $api_instance->machinesGetMachinesGet($machineListFilterParams);
+    $result = $api_instance->listMachines($machinesListFilterParams);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MachinesApi->machinesGetMachinesGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MachinesApi->listMachines: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -91,7 +91,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **machineListFilterParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams**](../Model/MachineListFilterParams.md)| An optional filter object to limit the returned machine objects | [optional]
+ **machinesListFilterParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams**](../Model/MachineListFilterParams.md)| An optional filter object to limit the returned machine objects | [optional]
 
 ### Return type
 

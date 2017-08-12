@@ -67,10 +67,10 @@ $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\Machines
 $machineCreationParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams | Machine creation parameters
 
 try {
-    $result = $api_instance->machinesCreateSingleMachinePublicPost($machineCreationParams);
+    $result = $api_instance->createMachine($machineCreationParams);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MachinesApi->machinesCreateSingleMachinePublicPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MachinesApi->createMachine: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -82,8 +82,8 @@ All URIs are relative to *https://api.paperspace.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*MachinesApi* | [**machinesCreateSingleMachinePublicPost**](docs/Api/MachinesApi.md#machinescreatesinglemachinepublicpost) | **POST** /machines/createSingleMachinePublic | Create and launch a new Paperspace virtual machine
-*MachinesApi* | [**machinesGetMachinesGet**](docs/Api/MachinesApi.md#machinesgetmachinesget) | **GET** /machines/getMachines | List information about all machines available
+*MachinesApi* | [**createMachine**](docs/Api/MachinesApi.md#createmachine) | **POST** /machines/createSingleMachinePublic | Create and launch a new Paperspace virtual machine
+*MachinesApi* | [**listMachines**](docs/Api/MachinesApi.md#listmachines) | **GET** /machines/getMachines | List information about all machines available
 
 
 ## Documentation For Models
@@ -91,7 +91,7 @@ Class | Method | HTTP request | Description
  - [CreatedMachineResponse](docs/Model/CreatedMachineResponse.md)
  - [Machine](docs/Model/Machine.md)
  - [MachineCreationParams](docs/Model/MachineCreationParams.md)
- - [MachineListFilterParams](docs/Model/MachineListFilterParams.md)
+ - [MachinesListFilterParams](docs/Model/MachinesListFilterParams.md)
  - [MachinesListResponse](docs/Model/MachinesListResponse.md)
 
 

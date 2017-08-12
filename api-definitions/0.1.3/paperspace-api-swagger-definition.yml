@@ -31,6 +31,7 @@ security:
 paths:
   /machines/createSingleMachinePublic:
     post:
+      operationId: "createMachine"
       tags:
       - "machines"
       summary: "Create and launch a new Paperspace virtual machine"
@@ -53,6 +54,7 @@ paths:
             $ref: "#/definitions/CreatedMachineResponse"
   /machines/getMachines:
     get:
+      operationId: "listMachines"
       tags:
       - "machines"
       summary: "List information about all machines available"
@@ -63,7 +65,7 @@ paths:
       - "application/json"
       parameters:
       - in: "body"
-        name: "MachineListFilterParams"
+        name: "MachinesListFilterParams"
         description: "An optional filter object to limit the returned machine objects"
         required: false
         schema:
@@ -285,7 +287,7 @@ definitions:
         example: "sc123abc"
   CreatedMachineResponse:
     "$ref": "#/definitions/Machine"
-  MachineListFilterParams:
+  MachinesListFilterParams:
     type: "object"
     properties:
       machineId:
