@@ -41,15 +41,24 @@ Paperspace API.
 
 require_once('<path-to-vendor-folder>/autoload.php');
 
-Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+use Gamingsolved\Paperspace\Api\Client\Version0_1_3 as PaperspaceApiClient;
 
-$api_instance = new Paperspace\Api\Client\Version0_1_3\Api\MachinesApi();
-$machineCreationParams = new \Paperspace\Api\Client\Version0_1_3\Model\MachineCreationParams();
+PaperspaceApiClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+
+$machineCreationParams = new PaperspaceApiClient\Model\MachineCreationParams();
+$machineCreationParams->setRegion('East Coast (NY2)');
+$machineCreationParams->setMachineType('Air');
+$machineCreationParams->setSize(50);
+$machineCreationParams->setBillingType('hourly');
+$machineCreationParams->setMachineName('My first machine');
+$machineCreationParams->setTemplateId('t123abc');
+
+$api_instance = new PaperspaceApiClient\Api\MachinesApi();
 
 try {
   $result = $api_instance->machinesCreateSingleMachinePublicPost($machineCreationParams);
   print_r($result);
-} catch (Exception $e) {
+} catch (\Exception $e) {
   echo 'Exception when calling MachinesApi->machinesCreateSingleMachinePublicPost: ', $e->getMessage(), PHP_EOL;
 }
 ```
