@@ -28,7 +28,8 @@ Add the following to your `composer.json`:
     ...
 ```
 
-Then, run `composer require gamingsolved/paperspace-api-client`.
+Then, run `composer require gamingsolved/paperspace-api-client`. This will pull the current `dev-master` version into
+your project.
 
 
 ## Usage
@@ -71,7 +72,7 @@ API:
 
 | Project version | Paperspace API version                       |
 |-----------------|----------------------------------------------|
-| 0.1.0           | 0.1.3 (only *machines/create* supported)     |
+| dev-master      | 0.1.3 (only *machines/create* supported)     |
 
 
 ## How to modify and extend the API specifications

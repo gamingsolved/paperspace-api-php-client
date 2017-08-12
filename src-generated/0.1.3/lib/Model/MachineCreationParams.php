@@ -11,9 +11,9 @@
  */
 
 /**
- * Paperspace
+ * Paperspace REST API
  *
- * Swagger representation of the Paperspace HTTP API
+ * Inofficial Swagger representation of the Paperspace REST API, provided by the GamingSolved project.
  *
  * OpenAPI spec version: 0.1.3
  * Contact: support@paperspace.com

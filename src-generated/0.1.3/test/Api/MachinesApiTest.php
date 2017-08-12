@@ -10,9 +10,9 @@
  */
 
 /**
- * Paperspace
+ * Paperspace REST API
  *
- * Swagger representation of the Paperspace HTTP API
+ * Inofficial Swagger representation of the Paperspace REST API, provided by the GamingSolved project.
  *
  * OpenAPI spec version: 0.1.3
  * Contact: support@paperspace.com
@@ -78,6 +78,16 @@ class MachinesApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testMachinesCreateSingleMachinePublicPost()
+    {
+    }
+
+    /**
+     * Test case for machinesGetMachinesGet
+     *
+     * List information about all machines available.
+     *
+     */
+    public function testMachinesGetMachinesGet()
     {
     }
 }

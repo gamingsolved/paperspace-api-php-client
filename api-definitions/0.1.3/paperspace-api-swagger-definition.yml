@@ -1,13 +1,19 @@
 swagger: "2.0"
 info:
-  description: "Swagger representation of the Paperspace HTTP API"
+  description: "Inofficial Swagger representation of the Paperspace REST API, provided by the GamingSolved project."
   version: "0.1.3"
-  title: "Paperspace"
-  termsOfService: ""
+  title: "Paperspace REST API"
+  termsOfService: "https://github.com/Paperspace/paperspace-node#disclaimer"
+  license:
+    name: ISC
+    url: https://raw.githubusercontent.com/Paperspace/paperspace-node/master/LICENSE.txt
   contact:
-    name: "Paperspace"
-    url: "https://paperspace.github.io/paperspace-node/"
+    name: "The Paperspace Project"
+    url: "https://paperspace.com"
     email: "support@paperspace.com"
+externalDocs:
+  description: "Official API documentation"
+  url: "https://paperspace.github.io/paperspace-node/"
 host: "api.paperspace.io"
 basePath: "/"
 tags:
@@ -45,7 +51,144 @@ paths:
           description: "Success"
           schema:
             $ref: "#/definitions/CreatedMachineResponse"
+  /machines/getMachines:
+    get:
+      tags:
+      - "machines"
+      summary: "List information about all machines available"
+      description: "List information about all machines available to either the current authenticated user or the team, if the user belongs to a team. Takes an optional argument to limit the returned machine objects."
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "MachineListFilterParams"
+        description: "An optional filter object to limit the returned machine objects"
+        required: false
+        schema:
+          $ref: "#/definitions/MachineListFilterParams"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/MachinesListResponse"
 definitions:
+  Machine:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+          description: ""
+          example: "ps123abc"
+        name:
+          type: "string"
+          description: ""
+          example: "My Machine 1"
+        os:
+          type: "string"
+          description: ""
+          example: "Microsoft Windows Server 2016 Datacenter"
+        ram:
+          type: "integer"
+          format: "int32"
+          description: ""
+          example: "8589938688"
+        cpus:
+          type: "integer"
+          format: "int32"
+          description: ""
+          example: 4
+        gpu:
+          type: "string"
+          description: ""
+          example: "GRID K160Q (2GB)"
+        storageTotal:
+          type: "integer"
+          format: "int32"
+          description: ""
+          example: "53687091200"
+        storageUsed:
+          type: "integer"
+          format: "int32"
+          description: ""
+          example: "110080"
+        usageRate:
+          type: "string"
+          description: ""
+          example: "Air hourly"
+        shutdownTimeoutInHours:
+          type: "integer"
+          format: "int32"
+          description: ""
+          example: 24
+        shutdownTimeoutForces:
+          type: "boolean"
+          description: ""
+          example: false
+        performAutoSnapshot:
+          type: "boolean"
+          description: ""
+          example: false
+        autoSnapshotFrequency:
+          type: "integer"
+          format: "int32"
+          description: ""
+          example: null
+        autoSnapshotSaveCount:
+          type: "integer"
+          format: "int32"
+          description: ""
+          example: null
+        agentType:
+          type: "string"
+          description: ""
+          example: "WindowsDesktop"
+        dtCreated:
+          type: "string"
+          format: "datetime"
+          description: ""
+          example: "2017-02-16T20:26:54.880Z"
+        state:
+          type: "string"
+          format: "datetime"
+          description: ""
+          example: "provisioning"
+        networkId:
+          type: "string"
+          description: ""
+          example: "n789ghi"
+        privateIpAddress:
+          type: "string"
+          description: ""
+          example: "10.64.21.47"
+        publicIpAddress:
+          type: "string"
+          description: ""
+          example: "169.255.255.254"
+        region:
+          type: "string"
+          description: ""
+          example: "East Coast (NY2)"
+          enum:
+          - "East Coast (NY2)"
+          - "West Coast (CA1)"
+        userId:
+          type: "string"
+          description: ""
+          example: "u123abc"
+        teamId:
+          type: "string"
+          description: ""
+          example: "te456def"
+        scriptId:
+          type: "string"
+          description: ""
+          example: "sc123abc"
+        dtLastRun:
+          type: "string"
+          description: ""
+          example: "2017-06-30T07:22:49.763Z"
   MachineCreationParams:
     type: "object"
     required:
@@ -141,112 +284,88 @@ definitions:
         description: "The script id of a script to be run on startup"
         example: "sc123abc"
   CreatedMachineResponse:
+    "$ref": "#/definitions/Machine"
+  MachineListFilterParams:
     type: "object"
     properties:
-      id:
+      machineId:
         type: "string"
-        description: ""
-        example: "ps123abc"
+        description: "Optional machine id to match on"
       name:
         type: "string"
-        description: ""
-        example: "My Machine 1"
+        description: "Optional name to match on"
       os:
         type: "string"
-        description: ""
-        example: null
+        description: "Optional os to match on"
       ram:
-        type: "integer"
-        format: "int32"
-        description: ""
-        example: null
+        type: "string"
+        description: "Optional ram value to match on"
       cpus:
         type: "integer"
         format: "int32"
-        description: ""
-        example: 1
+        description: "Optional cpu count to match on"
       gpu:
         type: "string"
-        description: ""
-        example: null
+        description: "Optional gpu to match on"
       storageTotal:
-        type: "integer"
-        format: "int32"
-        description: ""
-        example: null
+        type: "string"
+        description: "Optional storageTotal value to match on"
       storageUsed:
-        type: "integer"
-        format: "int32"
-        description: ""
-        example: null
+        type: "string"
+        description: "Optional storageUsed value to match on"
       usageRate:
         type: "string"
-        description: ""
-        example: "Air hourly"
+        description: "Optional usageRate value to match on"
       shutdownTimeoutInHours:
         type: "integer"
         format: "int32"
-        description: ""
-        example: 24
-      shutdownTimeoutForces:
-        type: "boolean"
-        description: ""
-        example: false
+        description: "Optional shutdownTimeoutInHours value to match on"
       performAutoSnapshot:
         type: "boolean"
-        description: ""
-        example: false
+        description: "Optional performAutoSnapshot value to match on, either true or false"
       autoSnapshotFrequency:
-        type: "integer"
-        format: "int32"
-        description: ""
-        example: null
+        type: "string"
+        description: "Optional autoSnapshotFrequency value to match on"
       autoSnapshotSaveCount:
         type: "integer"
         format: "int32"
-        description: ""
-        example: null
+        description: "Optional autoSnapshotSaveCount value to match on"
       agentType:
         type: "string"
-        description: ""
-        example: "WindowsDesktop"
+        description: "Optional agentType value to match on"
       dtCreated:
         type: "string"
-        format: "datetime"
-        description: ""
+        description: "Optional datatime value to match on"
         example: "2017-02-16T20:26:54.880Z"
       state:
         type: "string"
-        format: "datetime"
-        description: ""
-        example: "provisioning"
+        description: "Optional state value to match on"
       networkId:
         type: "string"
-        description: ""
-        example: null
+        description: "Optional networkId value to match on"
       privateIpAddress:
         type: "string"
-        description: ""
-        example: null
+        description: "Optional privateIpAddress value to match on"
       publicIpAddress:
         type: "string"
-        description: ""
-        example: null
+        description: "Optional publicIpAddress value to match on"
       region:
         type: "string"
-        description: ""
-        example: null
-        enum:
-        - "East Coast (NY2)"
-        - "West Coast (CA1)"
+        description: "Optional region value to match on"
       userId:
         type: "string"
-        description: ""
-        example: "u123abc"
+        description: "Optional userId value to match on"
       teamId:
         type: "string"
-        description: ""
-        example: "te456def"
-externalDocs:
-  description: "Issue a bug or feature request"
-  url: "https://github.com/Paperspace/paperspace-node/issues/new"
+        description: "Optional teamId value to match on"
+      scriptId:
+        type: "string"
+        description: "Optional scriptId value to match on"
+      dtLastRun:
+        type: "string"
+        description: "Optional script datatime last run value to match on"
+        example: "2017-02-16T20:26:54.880Z"
+  MachinesListResponse:
+    type: "array"
+    items:
+      "$ref": "#/definitions/Machine"

@@ -10,9 +10,9 @@
  */
 
 /**
- * Paperspace
+ * Paperspace REST API
  *
- * Swagger representation of the Paperspace HTTP API
+ * Inofficial Swagger representation of the Paperspace REST API, provided by the GamingSolved project.
  *
  * OpenAPI spec version: 0.1.3
  * Contact: support@paperspace.com
@@ -305,6 +305,232 @@ class MachinesApi
 
         return new Request(
             'POST',
+            $url,
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation machinesGetMachinesGet
+     *
+     * List information about all machines available
+     *
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machineListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse
+     */
+    public function machinesGetMachinesGet($machineListFilterParams = null)
+    {
+        list($response) = $this->machinesGetMachinesGetWithHttpInfo($machineListFilterParams);
+        return $response;
+    }
+
+    /**
+     * Operation machinesGetMachinesGetWithHttpInfo
+     *
+     * List information about all machines available
+     *
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machineListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function machinesGetMachinesGetWithHttpInfo($machineListFilterParams = null)
+    {
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse';
+        $request = $this->machinesGetMachinesGetRequest($machineListFilterParams);
+
+        try {
+
+            try {
+                $response = $this->client->send($request);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    "[$statusCode] Error connecting to the API ({$request->getUri()})",
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation machinesGetMachinesGetAsync
+     *
+     * List information about all machines available
+     *
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machineListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function machinesGetMachinesGetAsync($machineListFilterParams = null)
+    {
+        return $this->machinesGetMachinesGetAsyncWithHttpInfo($machineListFilterParams)->then(function ($response) {
+            return $response[0];
+        });
+    }
+
+    /**
+     * Operation machinesGetMachinesGetAsyncWithHttpInfo
+     *
+     * List information about all machines available
+     *
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machineListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function machinesGetMachinesGetAsyncWithHttpInfo($machineListFilterParams = null)
+    {
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachinesListResponse';
+        $request = $this->machinesGetMachinesGetRequest($machineListFilterParams);
+
+        return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        }, function ($exception) {
+            $response = $exception->getResponse();
+            $statusCode = $response->getStatusCode();
+            throw new ApiException(
+                "[$statusCode] Error connecting to the API ({$exception->getRequest()->getUri()})",
+                $statusCode,
+                $response->getHeaders(),
+                $response->getBody()
+            );
+        });
+    }
+
+    /**
+     * Create request for operation 'machinesGetMachinesGet'
+     *
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\MachineListFilterParams $machineListFilterParams An optional filter object to limit the returned machine objects (optional)
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function machinesGetMachinesGetRequest($machineListFilterParams = null)
+    {
+
+        $resourcePath = '/machines/getMachines';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($machineListFilterParams)) {
+            $_tempBody = $machineListFilterParams;
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                $httpBody = new MultipartStream($multipartContents); // for HTTP post (form)
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-API-Key');
+        if ($apiKey !== null) {
+            $headers['X-API-Key'] = $apiKey;
+        }
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        return new Request(
+            'GET',
             $url,
             $headers,
             $httpBody
