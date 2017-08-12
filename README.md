@@ -1,6 +1,6 @@
 # PHP Client Library for the Paperspace API
 
-©2017 Manuel Kiessling
+Copyright (c) 2017 Manuel Kiessling under [an MIT license](LICENSE).
 
 
 ## About
@@ -9,7 +9,7 @@ This project maintains inofficial *Open API Specification* compatible specs of t
 [Paperspace API](https://paperspace.github.io/paperspace-node/index.html), and uses these specs to auto-generate PHP
 clients based on [Guzzle](https://github.com/guzzle/guzzle), which can be used to work with the API.
 
-The resulting clients are provided as a library through the Composer ecosystem via this repository. 
+The resulting clients are provided as a library through the Composer ecosystem. 
 
 
 ## Installation
