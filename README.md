@@ -44,7 +44,7 @@ require_once('<path-to-vendor-folder>/autoload.php');
 
 use Gamingsolved\Paperspace\Api\Client\Version0_1_3 as PaperspaceApiClient;
 
-$config = PaperspaceApiClient\Configuration::setDefaultConfiguration();
+$config = PaperspaceApiClient\Configuration::getDefaultConfiguration();
 $config->setApiKey('X-API-Key', 'your-api-key-here');
 
 $machineCreationParams = new PaperspaceApiClient\Model\MachineCreationParams();
