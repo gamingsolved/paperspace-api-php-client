@@ -44,7 +44,8 @@ require_once('<path-to-vendor-folder>/autoload.php');
 
 use Gamingsolved\Paperspace\Api\Client\Version0_1_3 as PaperspaceApiClient;
 
-PaperspaceApiClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+$config = PaperspaceApiClient\Configuration::setDefaultConfiguration();
+$config->setApiKey('X-API-Key', 'your-api-key-here');
 
 $machineCreationParams = new PaperspaceApiClient\Model\MachineCreationParams();
 $machineCreationParams->setRegion('East Coast (NY2)');
@@ -54,7 +55,7 @@ $machineCreationParams->setBillingType('hourly');
 $machineCreationParams->setMachineName('My first machine');
 $machineCreationParams->setTemplateId('t123abc');
 
-$machinesApi = new PaperspaceApiClient\Api\MachinesApi();
+$machinesApiClient = new PaperspaceApiClient\Api\MachinesApi(null, $config);
 
 try {
   $result = $machinesApi->createMachine($machineCreationParams);
