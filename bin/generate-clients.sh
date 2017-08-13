@@ -14,7 +14,7 @@ do
   mkdir -p $DIR/../src-generated/$APIVERSION
 
   java -jar $CODEGENJAR generate \
-       -i $DIR/../api-definitions/$APIVERSION/paperspace-api-swagger-definition.yml \
+       -i $DIR/../api-definitions/$APIVERSION/paperspace-api-swagger-definition.json \
        -l php \
        -c $DIR/../api-definitions/$APIVERSION/swagger-config.json \
        -o $DIR/../src-generated/$APIVERSION

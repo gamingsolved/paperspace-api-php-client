@@ -87,7 +87,7 @@ created and updated manually.
 To do so, the code documentation for each API call is used as a reference - for example, the `create machine` API call
 is defined in the official Node.js API client code at
 https://github.com/Paperspace/paperspace-node/blob/v0.1.3_work/lib/machines/create.js, and its codedoc block serves as
-the reference for the definitions in `api-definitions/0.1.3/paperspace-api-swagger-definition.yml`.
+the reference for the definitions in `api-definitions/0.1.3/paperspace-api-swagger-definition.json`.
 
 The API specs are defined per-API-version, that is, a spec exists for each Paperspace API version (one folder per
 version below `api-definitions`).
@@ -104,7 +104,7 @@ API while also resulting in a nicely usable PHP client:
 
 The PHP API clients are generated using [swagger-codegen](https://github.com/swagger-api/swagger-codegen) v2.3.0.
 
-A definition file `api-definitions/<api-version>/paperspace-api-swagger-definition.yml` serves as the input
+A definition file `api-definitions/<api-version>/paperspace-api-swagger-definition.json` serves as the input
 specification, and generated sources are placed in
 `src-generated/<api-version>`.
 
