@@ -116,6 +116,42 @@
         }
       }
     },
+    "/machines/getMachinePublic": {
+      "get": {
+        "operationId": "showMachine",
+        "tags": [
+          "machines"
+        ],
+        "summary": "Show machine information",
+        "description": "Show machine information for the machine with the given id.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "machineId",
+            "description": "Id of the machine to show",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Machine"
+              }
+            }
+          }
+        }
+      }
+    },
     "/templates/getTemplates": {
       "get": {
         "operationId": "listTemplates",

@@ -90,4 +90,14 @@ class MachinesApiTest extends \PHPUnit_Framework_TestCase
     public function testListMachines()
     {
     }
+
+    /**
+     * Test case for showMachine
+     *
+     * Show machine information.
+     *
+     */
+    public function testShowMachine()
+    {
+    }
 }

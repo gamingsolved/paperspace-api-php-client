@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createMachine**](MachinesApi.md#createMachine) | **POST** /machines/createSingleMachinePublic | Create and launch a new Paperspace virtual machine
 [**listMachines**](MachinesApi.md#listMachines) | **GET** /machines/getMachines | List information about all machines available
+[**showMachine**](MachinesApi.md#showMachine) | **GET** /machines/getMachinePublic | Show machine information
 
 
 # **createMachine**
@@ -92,6 +93,56 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listMachinesParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams**](../Model/ListMachinesParams.md)| An optional filter object to limit the returned machine objects | [optional]
+
+### Return type
+
+[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]**](../Model/Machine.md)
+
+### Authorization
+
+[APIKeyHeader](../../README.md#APIKeyHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **showMachine**
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[] showMachine($machineId)
+
+Show machine information
+
+Show machine information for the machine with the given id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: APIKeyHeader
+Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+$api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi(new \Http\Adapter\Guzzle6\Client());
+$machineId = "machineId_example"; // string | Id of the machine to show
+
+try {
+    $result = $api_instance->showMachine($machineId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MachinesApi->showMachine: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **machineId** | **string**| Id of the machine to show |
 
 ### Return type
 
