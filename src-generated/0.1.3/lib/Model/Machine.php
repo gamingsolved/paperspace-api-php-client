@@ -102,7 +102,7 @@ class Machine implements ArrayAccess
         'autoSnapshotSaveCount' => 'int32',
         'agentType' => null,
         'dtCreated' => 'datetime',
-        'state' => 'datetime',
+        'state' => null,
         'networkId' => null,
         'privateIpAddress' => null,
         'publicIpAddress' => null,
@@ -236,10 +236,26 @@ class Machine implements ArrayAccess
         return self::$getters;
     }
 
+    const STATE_READY = 'ready';
+    const STATE_PROVISIONING = 'provisioning';
+    const STATE_OFF = 'off';
     const REGION_EAST_COAST__NY2 = 'East Coast (NY2)';
     const REGION_WEST_COAST__CA1 = 'West Coast (CA1)';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_READY,
+            self::STATE_PROVISIONING,
+            self::STATE_OFF,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -302,6 +318,14 @@ class Machine implements ArrayAccess
     {
         $invalid_properties = [];
 
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($this->container['state'], $allowed_values)) {
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
+        }
+
         $allowed_values = $this->getRegionAllowableValues();
         if (!in_array($this->container['region'], $allowed_values)) {
             $invalid_properties[] = sprintf(
@@ -322,6 +346,10 @@ class Machine implements ArrayAccess
     public function valid()
     {
 
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($this->container['state'], $allowed_values)) {
+            return false;
+        }
         $allowed_values = $this->getRegionAllowableValues();
         if (!in_array($this->container['region'], $allowed_values)) {
             return false;
@@ -682,6 +710,15 @@ class Machine implements ArrayAccess
      */
     public function setState($state)
     {
+        $allowed_values = $this->getStateAllowableValues();
+        if (!is_null($state) && !in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
         $this->container['state'] = $state;
 
         return $this;
