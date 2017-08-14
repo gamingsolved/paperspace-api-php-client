@@ -1,18 +1,18 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Inofficial Swagger representation of the [Paperspace REST API](https://paperspace.github.io/paperspace-node/), provided by the [GamingSolved](https://github.com/gamingsolved/paperspace-api-php-client) project.",
+    "description": "Inofficial Swagger representation of the [Paperspace REST API](https://paperspace.github.io/paperspace-node/), provided by the [GamingSolved Paperspace API PHP Client project](https://github.com/gamingsolved/paperspace-api-php-client).",
     "version": "0.1.3",
     "title": "Paperspace REST API",
     "termsOfService": "https://github.com/Paperspace/paperspace-node#disclaimer",
     "license": {
-      "name": "ISC",
+      "name": "ISC License (for the official API)",
       "url": "https://raw.githubusercontent.com/Paperspace/paperspace-node/master/LICENSE.txt"
     },
     "contact": {
-      "name": "The Paperspace Project",
-      "url": "https://paperspace.com",
-      "email": "support@paperspace.com"
+      "name": "GamingSolved Paperspace API PHP Client project",
+      "url": "https://github.com/gamingsolved/paperspace-api-php-client",
+      "email": "info@gamingsolved.com"
     }
   },
   "externalDocs": {
