@@ -17,22 +17,7 @@ You can interactively explore the Swagger documentation of Paperspace API v0.1.3
 
 ## Installation
 
-Add the following to your `composer.json`:
-
-```
-    ...
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/gamingsolved/paperspace-api-php-client.git"
-        }
-    ],
-    "minimum-stability": "dev",
-    ...
-```
-
-Then, run `composer require gamingsolved/paperspace-api-client`. This will pull the current `dev-master` version into
-your project.
+Simply run `composer require gamingsolved/paperspace-api-client` to install the latest version.
 
 
 ## Usage
@@ -73,15 +58,14 @@ At
 you can find the full documentation for the 0.1.3 API client with more examples.
 
 
-
 ## Matching project versions and Paperspace API versions
 
 Use the following table as a reference to find out which version of this project supports what version of the Paperspace
 API:
 
-| Project version | Paperspace API version                       |
-|-----------------|----------------------------------------------|
-| dev-master      | 0.1.3 (only partly supported)                |
+| Project version | Paperspace API version | Notes                                                                                      |
+|-----------------|------------------------|--------------------------------------------------------------------------------------------|
+| 0.1.0           | 0.1.3                  | only supports `machines/create,list,show,start,stop,restart,destroy` and `templates/list`) |
 
 
 ## How to modify and extend the API specifications
