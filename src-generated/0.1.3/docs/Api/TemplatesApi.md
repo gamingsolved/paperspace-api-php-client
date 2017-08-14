@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **listTemplates**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[] listTemplates($listTemplatesParams)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[] listTemplates($id, $name, $label, $os, $dtCreated, $teamId, $userId, $region)
 
 List information about all templates available
 
@@ -25,10 +25,17 @@ Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfigu
 // Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\TemplatesApi(new \Http\Adapter\Guzzle6\Client());
-$listTemplatesParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams | An optional filter object to limit the returned template objects
+$id = "id_example"; // string | Optional template id to match on
+$name = "name_example"; // string | Optional name to match on
+$label = "label_example"; // string | Optional label to match on
+$os = "os_example"; // string | Optional os to match on
+$dtCreated = "dtCreated_example"; // string | Optional datatime created value to match on (example: 2017-02-16T20:26:54.880Z)
+$teamId = "teamId_example"; // string | Optional teamId to match on
+$userId = "userId_example"; // string | Optional userId to match on
+$region = "region_example"; // string | Optional region to match on
 
 try {
-    $result = $api_instance->listTemplates($listTemplatesParams);
+    $result = $api_instance->listTemplates($id, $name, $label, $os, $dtCreated, $teamId, $userId, $region);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TemplatesApi->listTemplates: ', $e->getMessage(), PHP_EOL;
@@ -40,7 +47,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **listTemplatesParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams**](../Model/ListTemplatesParams.md)| An optional filter object to limit the returned template objects | [optional]
+ **id** | **string**| Optional template id to match on | [optional]
+ **name** | **string**| Optional name to match on | [optional]
+ **label** | **string**| Optional label to match on | [optional]
+ **os** | **string**| Optional os to match on | [optional]
+ **dtCreated** | **string**| Optional datatime created value to match on (example: 2017-02-16T20:26:54.880Z) | [optional]
+ **teamId** | **string**| Optional teamId to match on | [optional]
+ **userId** | **string**| Optional userId to match on | [optional]
+ **region** | **string**| Optional region to match on | [optional]
 
 ### Return type
 
@@ -52,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

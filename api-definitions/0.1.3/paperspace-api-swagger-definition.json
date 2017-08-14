@@ -268,21 +268,65 @@
         ],
         "summary": "List information about all templates available",
         "description": "List information about all templates available to either the current authenticated user or the team, if the user belongs to a team. Takes an optional argument to limit the returned template objects.",
-        "consumes": [
-          "application/json"
-        ],
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "in": "body",
-            "name": "ListTemplatesParams",
-            "description": "An optional filter object to limit the returned template objects",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/ListTemplatesParams"
-            }
+            "name": "id",
+            "in": "query",
+            "type": "string",
+            "description": "Optional template id to match on",
+            "required": false
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "type": "string",
+            "description": "Optional name to match on",
+            "required": false
+          },
+          {
+            "name": "label",
+            "in": "query",
+            "type": "string",
+            "description": "Optional label to match on",
+            "required": false
+          },
+          {
+            "name": "os",
+            "in": "query",
+            "type": "string",
+            "description": "Optional os to match on",
+            "required": false
+          },
+          {
+            "name": "dtCreated",
+            "in": "query",
+            "type": "string",
+            "description": "Optional datatime created value to match on (example: 2017-02-16T20:26:54.880Z)",
+            "required": false
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "type": "string",
+            "description": "Optional teamId to match on",
+            "required": false
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "type": "string",
+            "description": "Optional userId to match on",
+            "required": false
+          },
+          {
+            "name": "region",
+            "in": "query",
+            "type": "string",
+            "description": "Optional region to match on",
+            "required": false
           }
         ],
         "responses": {
@@ -718,44 +762,6 @@
           "type": "string",
           "description": "Optional script datatime last run value to match on",
           "example": "2017-02-16T20:26:54.880Z"
-        }
-      }
-    },
-    "ListTemplatesParams": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Optional template id to match on"
-        },
-        "name": {
-          "type": "string",
-          "description": "Optional name to match on"
-        },
-        "label": {
-          "type": "string",
-          "description": "Optional label to match on"
-        },
-        "os": {
-          "type": "string",
-          "description": "Optional os to match on"
-        },
-        "dtCreated": {
-          "type": "string",
-          "description": "Optional datatime created value to match on",
-          "example": "2017-02-16T20:26:54.880Z"
-        },
-        "teamId": {
-          "type": "string",
-          "description": "Optional teamId to match on"
-        },
-        "userId": {
-          "type": "string",
-          "description": "Optional userId to match on"
-        },
-        "region": {
-          "type": "string",
-          "description": "Optional region to match on"
         }
       }
     }

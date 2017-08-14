@@ -86,14 +86,21 @@ class TemplatesApi
      *
      * List information about all templates available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams $listTemplatesParams An optional filter object to limit the returned template objects (optional)
+     * @param string $id Optional template id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $label Optional label to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $dtCreated Optional datatime created value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $teamId Optional teamId to match on (optional)
+     * @param string $userId Optional userId to match on (optional)
+     * @param string $region Optional region to match on (optional)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[]
      */
-    public function listTemplates($listTemplatesParams = null)
+    public function listTemplates($id = null, $name = null, $label = null, $os = null, $dtCreated = null, $teamId = null, $userId = null, $region = null)
     {
-        list($response) = $this->listTemplatesWithHttpInfo($listTemplatesParams);
+        list($response) = $this->listTemplatesWithHttpInfo($id, $name, $label, $os, $dtCreated, $teamId, $userId, $region);
         return $response;
     }
 
@@ -102,15 +109,22 @@ class TemplatesApi
      *
      * List information about all templates available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams $listTemplatesParams An optional filter object to limit the returned template objects (optional)
+     * @param string $id Optional template id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $label Optional label to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $dtCreated Optional datatime created value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $teamId Optional teamId to match on (optional)
+     * @param string $userId Optional userId to match on (optional)
+     * @param string $region Optional region to match on (optional)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTemplatesWithHttpInfo($listTemplatesParams = null)
+    public function listTemplatesWithHttpInfo($id = null, $name = null, $label = null, $os = null, $dtCreated = null, $teamId = null, $userId = null, $region = null)
     {
         $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[]';
-        $request = $this->listTemplatesRequest($listTemplatesParams);
+        $request = $this->listTemplatesRequest($id, $name, $label, $os, $dtCreated, $teamId, $userId, $region);
 
         try {
 
@@ -167,13 +181,20 @@ class TemplatesApi
      *
      * List information about all templates available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams $listTemplatesParams An optional filter object to limit the returned template objects (optional)
+     * @param string $id Optional template id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $label Optional label to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $dtCreated Optional datatime created value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $teamId Optional teamId to match on (optional)
+     * @param string $userId Optional userId to match on (optional)
+     * @param string $region Optional region to match on (optional)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTemplatesAsync($listTemplatesParams = null)
+    public function listTemplatesAsync($id = null, $name = null, $label = null, $os = null, $dtCreated = null, $teamId = null, $userId = null, $region = null)
     {
-        return $this->listTemplatesAsyncWithHttpInfo($listTemplatesParams)->then(function ($response) {
+        return $this->listTemplatesAsyncWithHttpInfo($id, $name, $label, $os, $dtCreated, $teamId, $userId, $region)->then(function ($response) {
             return $response[0];
         });
     }
@@ -183,14 +204,21 @@ class TemplatesApi
      *
      * List information about all templates available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams $listTemplatesParams An optional filter object to limit the returned template objects (optional)
+     * @param string $id Optional template id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $label Optional label to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $dtCreated Optional datatime created value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $teamId Optional teamId to match on (optional)
+     * @param string $userId Optional userId to match on (optional)
+     * @param string $region Optional region to match on (optional)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTemplatesAsyncWithHttpInfo($listTemplatesParams = null)
+    public function listTemplatesAsyncWithHttpInfo($id = null, $name = null, $label = null, $os = null, $dtCreated = null, $teamId = null, $userId = null, $region = null)
     {
         $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Template[]';
-        $request = $this->listTemplatesRequest($listTemplatesParams);
+        $request = $this->listTemplatesRequest($id, $name, $label, $os, $dtCreated, $teamId, $userId, $region);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
             $responseBody = $response->getBody();
@@ -223,11 +251,18 @@ class TemplatesApi
     /**
      * Create request for operation 'listTemplates'
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListTemplatesParams $listTemplatesParams An optional filter object to limit the returned template objects (optional)
+     * @param string $id Optional template id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $label Optional label to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $dtCreated Optional datatime created value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $teamId Optional teamId to match on (optional)
+     * @param string $userId Optional userId to match on (optional)
+     * @param string $region Optional region to match on (optional)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listTemplatesRequest($listTemplatesParams = null)
+    protected function listTemplatesRequest($id = null, $name = null, $label = null, $os = null, $dtCreated = null, $teamId = null, $userId = null, $region = null)
     {
 
         $resourcePath = '/templates/getTemplates';
@@ -237,13 +272,40 @@ class TemplatesApi
         $httpBody = '';
         $multipart = false;
 
-
-
-        // body params
-        $_tempBody = null;
-        if (isset($listTemplatesParams)) {
-            $_tempBody = $listTemplatesParams;
+        // query params
+        if ($id !== null) {
+            $queryParams['id'] = ObjectSerializer::toQueryValue($id);
         }
+        // query params
+        if ($name !== null) {
+            $queryParams['name'] = ObjectSerializer::toQueryValue($name);
+        }
+        // query params
+        if ($label !== null) {
+            $queryParams['label'] = ObjectSerializer::toQueryValue($label);
+        }
+        // query params
+        if ($os !== null) {
+            $queryParams['os'] = ObjectSerializer::toQueryValue($os);
+        }
+        // query params
+        if ($dtCreated !== null) {
+            $queryParams['dtCreated'] = ObjectSerializer::toQueryValue($dtCreated);
+        }
+        // query params
+        if ($teamId !== null) {
+            $queryParams['teamId'] = ObjectSerializer::toQueryValue($teamId);
+        }
+        // query params
+        if ($userId !== null) {
+            $queryParams['userId'] = ObjectSerializer::toQueryValue($userId);
+        }
+        // query params
+        if ($region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($region);
+        }
+
+
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -252,7 +314,7 @@ class TemplatesApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                []
             );
         }
 
