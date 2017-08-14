@@ -249,7 +249,11 @@
         },
         "state": {
           "type": "string",
-          "format": "datetime",
+          "enum": [
+            "ready",
+            "provisioning",
+            "off"
+          ],
           "description": "",
           "example": "provisioning"
         },
