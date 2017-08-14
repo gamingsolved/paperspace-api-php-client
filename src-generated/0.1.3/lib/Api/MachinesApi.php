@@ -1159,6 +1159,202 @@ class MachinesApi
     }
 
     /**
+     * Operation startMachine
+     *
+     * Start up an individual machine
+     *
+     * @param string $machineId The id of the machine to start (required)
+     * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function startMachine($machineId)
+    {
+        $this->startMachineWithHttpInfo($machineId);
+    }
+
+    /**
+     * Operation startMachineWithHttpInfo
+     *
+     * Start up an individual machine
+     *
+     * @param string $machineId The id of the machine to start (required)
+     * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function startMachineWithHttpInfo($machineId)
+    {
+        $returnType = '';
+        $request = $this->startMachineRequest($machineId);
+
+        try {
+
+            try {
+                $response = $this->client->send($request);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    "[$statusCode] Error connecting to the API ({$request->getUri()})",
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation startMachineAsync
+     *
+     * Start up an individual machine
+     *
+     * @param string $machineId The id of the machine to start (required)
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function startMachineAsync($machineId)
+    {
+        return $this->startMachineAsyncWithHttpInfo($machineId)->then(function ($response) {
+            return $response[0];
+        });
+    }
+
+    /**
+     * Operation startMachineAsyncWithHttpInfo
+     *
+     * Start up an individual machine
+     *
+     * @param string $machineId The id of the machine to start (required)
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function startMachineAsyncWithHttpInfo($machineId)
+    {
+        $returnType = '';
+        $request = $this->startMachineRequest($machineId);
+
+        return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
+            return [null, $response->getStatusCode(), $response->getHeaders()];
+        }, function ($exception) {
+            $response = $exception->getResponse();
+            $statusCode = $response->getStatusCode();
+            throw new ApiException(
+                "[$statusCode] Error connecting to the API ({$exception->getRequest()->getUri()})",
+                $statusCode,
+                $response->getHeaders(),
+                $response->getBody()
+            );
+        });
+    }
+
+    /**
+     * Create request for operation 'startMachine'
+     *
+     * @param string $machineId The id of the machine to start (required)
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function startMachineRequest($machineId)
+    {
+        // verify the required parameter 'machineId' is set
+        if ($machineId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $machineId when calling startMachine');
+        }
+
+        $resourcePath = '/machines/{machineId}/start';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($machineId !== null) {
+            $resourcePath = str_replace('{' . 'machineId' . '}', ObjectSerializer::toPathValue($machineId), $resourcePath);
+        }
+
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                $httpBody = new MultipartStream($multipartContents); // for HTTP post (form)
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-API-Key');
+        if ($apiKey !== null) {
+            $headers['X-API-Key'] = $apiKey;
+        }
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        return new Request(
+            'POST',
+            $url,
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation stopMachine
      *
      * Stop an individual machine

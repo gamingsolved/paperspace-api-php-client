@@ -122,6 +122,16 @@ class MachinesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for startMachine
+     *
+     * Start up an individual machine.
+     *
+     */
+    public function testStartMachine()
+    {
+    }
+
+    /**
      * Test case for stopMachine
      *
      * Stop an individual machine.

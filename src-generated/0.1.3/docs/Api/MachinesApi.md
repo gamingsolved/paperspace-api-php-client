@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**listMachines**](MachinesApi.md#listMachines) | **GET** /machines/getMachines | List information about all machines available
 [**restartMachine**](MachinesApi.md#restartMachine) | **POST** /machines/{machineId}/restart | Restart an individual machine
 [**showMachine**](MachinesApi.md#showMachine) | **GET** /machines/getMachinePublic | Show machine information
+[**startMachine**](MachinesApi.md#startMachine) | **POST** /machines/{machineId}/start | Start up an individual machine
 [**stopMachine**](MachinesApi.md#stopMachine) | **POST** /machines/{machineId}/stop | Stop an individual machine
 
 
@@ -257,6 +258,55 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **startMachine**
+> startMachine($machineId)
+
+Start up an individual machine
+
+Start up an individual machine. If the machine is already started, this action is a no-op. If the machine is off, it will be booted up. This action can only be performed by the user who owns the machine.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: APIKeyHeader
+Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+$api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi(new \Http\Adapter\Guzzle6\Client());
+$machineId = "machineId_example"; // string | The id of the machine to start
+
+try {
+    $api_instance->startMachine($machineId);
+} catch (Exception $e) {
+    echo 'Exception when calling MachinesApi->startMachine: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **machineId** | **string**| The id of the machine to start |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[APIKeyHeader](../../README.md#APIKeyHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

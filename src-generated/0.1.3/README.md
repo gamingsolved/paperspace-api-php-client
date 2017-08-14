@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *MachinesApi* | [**listMachines**](docs/Api/MachinesApi.md#listmachines) | **GET** /machines/getMachines | List information about all machines available
 *MachinesApi* | [**restartMachine**](docs/Api/MachinesApi.md#restartmachine) | **POST** /machines/{machineId}/restart | Restart an individual machine
 *MachinesApi* | [**showMachine**](docs/Api/MachinesApi.md#showmachine) | **GET** /machines/getMachinePublic | Show machine information
+*MachinesApi* | [**startMachine**](docs/Api/MachinesApi.md#startmachine) | **POST** /machines/{machineId}/start | Start up an individual machine
 *MachinesApi* | [**stopMachine**](docs/Api/MachinesApi.md#stopmachine) | **POST** /machines/{machineId}/stop | Stop an individual machine
 *TemplatesApi* | [**listTemplates**](docs/Api/TemplatesApi.md#listtemplates) | **GET** /templates/getTemplates | List information about all templates available
 
