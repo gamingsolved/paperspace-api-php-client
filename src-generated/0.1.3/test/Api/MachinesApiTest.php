@@ -102,6 +102,16 @@ class MachinesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for restartMachine
+     *
+     * Restart an individual machine.
+     *
+     */
+    public function testRestartMachine()
+    {
+    }
+
+    /**
      * Test case for showMachine
      *
      * Show machine information.

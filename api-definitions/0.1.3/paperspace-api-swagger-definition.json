@@ -179,6 +179,33 @@
         }
       }
     },
+    "/machines/{machineId}/restart": {
+      "post": {
+        "operationId": "restartMachine",
+        "tags": [
+          "machines"
+        ],
+        "summary": "Restart an individual machine",
+        "description": "Restart an individual machine. If the machine is already restarting, this action will request the machine be restarted again. This action can only be performed by the user who owns the machine.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "machineId",
+            "description": "The id of the machine to restart",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Machine not found"
+          }
+        }
+      }
+    },
     "/templates/getTemplates": {
       "get": {
         "operationId": "listTemplates",
