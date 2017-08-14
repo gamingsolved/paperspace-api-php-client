@@ -83,6 +83,7 @@ All URIs are relative to *https://api.paperspace.io*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *MachinesApi* | [**createMachine**](docs/Api/MachinesApi.md#createmachine) | **POST** /machines/createSingleMachinePublic | Create and launch a new Paperspace virtual machine
+*MachinesApi* | [**destroyMachine**](docs/Api/MachinesApi.md#destroymachine) | **POST** /machines/{machineId}/destroyMachine | Destroy a machine
 *MachinesApi* | [**listMachines**](docs/Api/MachinesApi.md#listmachines) | **GET** /machines/getMachines | List information about all machines available
 *MachinesApi* | [**showMachine**](docs/Api/MachinesApi.md#showmachine) | **GET** /machines/getMachinePublic | Show machine information
 *TemplatesApi* | [**listTemplates**](docs/Api/TemplatesApi.md#listtemplates) | **GET** /templates/getTemplates | List information about all templates available

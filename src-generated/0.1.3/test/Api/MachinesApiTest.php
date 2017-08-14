@@ -82,6 +82,16 @@ class MachinesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for destroyMachine
+     *
+     * Destroy a machine.
+     *
+     */
+    public function testDestroyMachine()
+    {
+    }
+
+    /**
      * Test case for listMachines
      *
      * List information about all machines available.
