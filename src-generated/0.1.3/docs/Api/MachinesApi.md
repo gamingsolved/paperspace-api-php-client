@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**listMachines**](MachinesApi.md#listMachines) | **GET** /machines/getMachines | List information about all machines available
 [**restartMachine**](MachinesApi.md#restartMachine) | **POST** /machines/{machineId}/restart | Restart an individual machine
 [**showMachine**](MachinesApi.md#showMachine) | **GET** /machines/getMachinePublic | Show machine information
+[**stopMachine**](MachinesApi.md#stopMachine) | **POST** /machines/{machineId}/stop | Stop an individual machine
 
 
 # **createMachine**
@@ -256,6 +257,55 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **stopMachine**
+> stopMachine($machineId)
+
+Stop an individual machine
+
+Stop an individual machine. If the machine is already stopped or has been shut down, this action is a no-op. If the machine is running, it will be stopped and any users logged in will be immediately kicked out. This action can only be performed by the user who owns the machine.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: APIKeyHeader
+Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+$api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi(new \Http\Adapter\Guzzle6\Client());
+$machineId = "machineId_example"; // string | The id of the machine to shut down
+
+try {
+    $api_instance->stopMachine($machineId);
+} catch (Exception $e) {
+    echo 'Exception when calling MachinesApi->stopMachine: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **machineId** | **string**| The id of the machine to shut down |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[APIKeyHeader](../../README.md#APIKeyHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

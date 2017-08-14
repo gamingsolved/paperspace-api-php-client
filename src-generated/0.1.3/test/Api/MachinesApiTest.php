@@ -120,4 +120,14 @@ class MachinesApiTest extends \PHPUnit_Framework_TestCase
     public function testShowMachine()
     {
     }
+
+    /**
+     * Test case for stopMachine
+     *
+     * Stop an individual machine.
+     *
+     */
+    public function testStopMachine()
+    {
+    }
 }

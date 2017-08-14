@@ -206,6 +206,33 @@
         }
       }
     },
+    "/machines/{machineId}/stop": {
+      "post": {
+        "operationId": "stopMachine",
+        "tags": [
+          "machines"
+        ],
+        "summary": "Stop an individual machine",
+        "description": "Stop an individual machine. If the machine is already stopped or has been shut down, this action is a no-op. If the machine is running, it will be stopped and any users logged in will be immediately kicked out. This action can only be performed by the user who owns the machine.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "machineId",
+            "description": "The id of the machine to shut down",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Machine not found"
+          }
+        }
+      }
+    },
     "/templates/getTemplates": {
       "get": {
         "operationId": "listTemplates",
