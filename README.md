@@ -68,6 +68,11 @@ try {
 }
 ```
 
+At
+[src-generated/0.1.3/docs/Api](https://github.com/gamingsolved/paperspace-api-php-client/tree/master/src-generated/0.1.3/docs/Api),
+you can find the full documentation for the 0.1.3 API client with more examples.
+
+
 
 ## Matching project versions and Paperspace API versions
 
