@@ -82,10 +82,10 @@ API:
 ## How to modify and extend the API specifications
 
 The PHP API clients provided by this project are generated automatically as far as possible (see below). To do so, this
-project manages [Open API Specification / Swagger](https://swagger.io/specification/) based definition of the
+project manages [Open API Specification / Swagger](https://swagger.io/specification/) based definitions of the
 Paperspace API in its different versions. As there is currently no (known) way to generated these definitions based on
-the [Paperspace API client code](https://github.com/Paperspace/paperspace-node) directly, the Swagger definitions are
-created and updated manually.
+the [Paperspace API Node.js client code](https://github.com/Paperspace/paperspace-node) directly, the Swagger
+definitions are created and updated manually.
 
 To do so, the code documentation for each API call is used as a reference - for example, the `create machine` API call
 is defined in the official Node.js API client code at
