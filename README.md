@@ -11,6 +11,9 @@ clients based on [Guzzle](https://github.com/guzzle/guzzle), which can be used t
 
 The resulting clients are provided as a library through the Composer ecosystem. 
 
+You can interactively explore the Swagger documentation of Paperspace API v0.1.3
+[here](https://gamingsolved.github.io/paperspace-api-php-client/swagger-docs/0.1.3/).
+
 
 ## Installation
 
