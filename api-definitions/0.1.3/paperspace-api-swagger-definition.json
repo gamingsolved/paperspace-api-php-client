@@ -210,9 +210,9 @@
             "in": "query",
             "type": "string",
             "enum": [
-              "off",
+              "ready",
               "provisioning",
-              "ready"
+              "off"
             ],
             "description": "Optional state value to match on",
             "required": false
