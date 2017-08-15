@@ -325,11 +325,12 @@
             "name": "region",
             "in": "query",
             "type": "string",
+            "enum": [
+              "East Coast (NY2)",
+              "West Coast (CA1)"
+            ],
             "description": "Optional region to match on",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/Region"
-            }
+            "required": false
           }
         ],
         "responses": {
@@ -541,9 +542,6 @@
           "example": null
         },
         "region": {
-          "type": "string",
-          "description": "Only for team-owned templates",
-          "example": "East Coast (NY2)",
           "$ref": "#/definitions/Region"
         }
       }

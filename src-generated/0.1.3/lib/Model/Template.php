@@ -390,7 +390,7 @@ class Template implements ArrayAccess
 
     /**
      * Sets region
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region $region Only for team-owned templates
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region $region
      * @return $this
      */
     public function setRegion($region)
