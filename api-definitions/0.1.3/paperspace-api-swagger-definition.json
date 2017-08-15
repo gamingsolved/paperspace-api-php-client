@@ -733,7 +733,11 @@
       ],
       "properties": {
         "region": {
-          "$ref": "#/definitions/Region"
+          "type": "string",
+          "enum": [
+            "East Coast (NY2)",
+            "West Coast (CA1)"
+          ]
         },
         "machineType": {
           "type": "string",

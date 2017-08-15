@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**region** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region**](Region.md) |  | 
+**region** | **string** |  | 
 **machineType** | **string** |  | 
 **size** | **int** | Storage size for the machine in GB | 
 **billingType** | **string** | Either &#39;monthly&#39; or &#39;hourly&#39; billing | 
