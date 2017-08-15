@@ -93,14 +93,189 @@
           "application/json"
         ],
         "parameters": [
+
+
+
+
           {
-            "in": "body",
-            "name": "ListMachinesParams",
-            "description": "An optional filter object to limit the returned machine objects",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/ListMachinesParams"
-            }
+            "name": "machineId",
+            "in": "query",
+            "type": "string",
+            "description": "Optional machine id to match on",
+            "required": false
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "type": "string",
+            "description": "Optional name to match on",
+            "required": false
+          },
+          {
+            "name": "os",
+            "in": "query",
+            "type": "string",
+            "description": "Optional os to match on",
+            "required": false
+          },
+          {
+            "name": "ram",
+            "in": "query",
+            "type": "string",
+            "description": "Optional ram value to match on",
+            "required": false
+          },
+          {
+            "name": "cpus",
+            "in": "query",
+            "type": "integer",
+            "format": "int32",
+            "description": "Optional cpu count to match on",
+            "required": false
+          },
+          {
+            "name": "gpu",
+            "in": "query",
+            "type": "string",
+            "description": "Optional gpu to match on",
+            "required": false
+          },
+          {
+            "name": "storageTotal",
+            "in": "query",
+            "type": "string",
+            "description": "Optional storageTotal value to match on",
+            "required": false
+          },
+          {
+            "name": "storageUsed",
+            "in": "query",
+            "type": "string",
+            "description": "Optional storageUsed value to match on",
+            "required": false
+          },
+          {
+            "name": "usageRate",
+            "in": "query",
+            "type": "string",
+            "description": "Optional usageRate value to match on",
+            "required": false
+          },
+          {
+            "name": "shutdownTimeoutInHours",
+            "in": "query",
+            "type": "integer",
+            "format": "int32",
+            "description": "Optional shutdownTimeoutInHours value to match on",
+            "required": false
+          },
+          {
+            "name": "performAutoSnapshot",
+            "in": "query",
+            "type": "boolean",
+            "description": "Optional performAutoSnapshot value to match on, either true or false",
+            "required": false
+          },
+          {
+            "name": "autoSnapshotFrequency",
+            "in": "query",
+            "type": "string",
+            "description": "Optional autoSnapshotFrequency value to match on",
+            "required": false
+          },
+          {
+            "name": "autoSnapshotSaveCount",
+            "in": "query",
+            "type": "integer",
+            "format": "int32",
+            "description": "Optional autoSnapshotSaveCount value to match on",
+            "required": false
+          },
+          {
+            "name": "agentType",
+            "in": "query",
+            "type": "string",
+            "description": "Optional agentType value to match on",
+            "required": false
+          },
+          {
+            "name": "dtCreated",
+            "in": "query",
+            "type": "string",
+            "description": "Optional datatime value to match on (example: 2017-02-16T20:26:54.880Z)",
+            "required": false
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "off",
+              "provisioning",
+              "ready"
+            ],
+            "description": "Optional state value to match on",
+            "required": false
+          },
+          {
+            "name": "networkId",
+            "in": "query",
+            "type": "string",
+            "description": "Optional networkId value to match on",
+            "required": false
+          },
+          {
+            "name": "privateIpAddress",
+            "in": "query",
+            "type": "string",
+            "description": "Optional privateIpAddress value to match on",
+            "required": false
+          },
+          {
+            "name": "publicIpAddress",
+            "in": "query",
+            "type": "string",
+            "description": "Optional publicIpAddress value to match on",
+            "required": false
+          },
+          {
+            "name": "region",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "East Coast (NY2)",
+              "West Coast (CA1)"
+            ],
+            "description": "Optional region to match on",
+            "required": false
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "type": "string",
+            "description": "Optional userId value to match on",
+            "required": false
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "type": "string",
+            "description": "Optional teamId value to match on",
+            "required": false
+          },
+          {
+            "name": "scriptId",
+            "in": "query",
+            "type": "string",
+            "description": "Optional scriptId value to match on",
+            "required": false
+          },
+          {
+            "name": "dtLastRun",
+            "in": "query",
+            "type": "string",
+            "description": "Optional script datatime last run value to match on (example: 2017-02-16T20:26:54.880Z)",
+            "required": false
           }
         ],
         "responses": {
@@ -654,112 +829,6 @@
           "type": "string",
           "description": "The script id of a script to be run on startup",
           "example": "sc123abc"
-        }
-      }
-    },
-    "ListMachinesParams": {
-      "type": "object",
-      "properties": {
-        "machineId": {
-          "type": "string",
-          "description": "Optional machine id to match on"
-        },
-        "name": {
-          "type": "string",
-          "description": "Optional name to match on"
-        },
-        "os": {
-          "type": "string",
-          "description": "Optional os to match on"
-        },
-        "ram": {
-          "type": "string",
-          "description": "Optional ram value to match on"
-        },
-        "cpus": {
-          "type": "integer",
-          "format": "int32",
-          "description": "Optional cpu count to match on"
-        },
-        "gpu": {
-          "type": "string",
-          "description": "Optional gpu to match on"
-        },
-        "storageTotal": {
-          "type": "string",
-          "description": "Optional storageTotal value to match on"
-        },
-        "storageUsed": {
-          "type": "string",
-          "description": "Optional storageUsed value to match on"
-        },
-        "usageRate": {
-          "type": "string",
-          "description": "Optional usageRate value to match on"
-        },
-        "shutdownTimeoutInHours": {
-          "type": "integer",
-          "format": "int32",
-          "description": "Optional shutdownTimeoutInHours value to match on"
-        },
-        "performAutoSnapshot": {
-          "type": "boolean",
-          "description": "Optional performAutoSnapshot value to match on, either true or false"
-        },
-        "autoSnapshotFrequency": {
-          "type": "string",
-          "description": "Optional autoSnapshotFrequency value to match on"
-        },
-        "autoSnapshotSaveCount": {
-          "type": "integer",
-          "format": "int32",
-          "description": "Optional autoSnapshotSaveCount value to match on"
-        },
-        "agentType": {
-          "type": "string",
-          "description": "Optional agentType value to match on"
-        },
-        "dtCreated": {
-          "type": "string",
-          "description": "Optional datatime value to match on",
-          "example": "2017-02-16T20:26:54.880Z"
-        },
-        "state": {
-          "type": "string",
-          "description": "Optional state value to match on"
-        },
-        "networkId": {
-          "type": "string",
-          "description": "Optional networkId value to match on"
-        },
-        "privateIpAddress": {
-          "type": "string",
-          "description": "Optional privateIpAddress value to match on"
-        },
-        "publicIpAddress": {
-          "type": "string",
-          "description": "Optional publicIpAddress value to match on"
-        },
-        "region": {
-          "type": "string",
-          "description": "Optional region value to match on"
-        },
-        "userId": {
-          "type": "string",
-          "description": "Optional userId value to match on"
-        },
-        "teamId": {
-          "type": "string",
-          "description": "Optional teamId value to match on"
-        },
-        "scriptId": {
-          "type": "string",
-          "description": "Optional scriptId value to match on"
-        },
-        "dtLastRun": {
-          "type": "string",
-          "description": "Optional script datatime last run value to match on",
-          "example": "2017-02-16T20:26:54.880Z"
         }
       }
     }

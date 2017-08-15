@@ -113,7 +113,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMachines**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[] listMachines($listMachinesParams)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[] listMachines($machineId, $name, $os, $ram, $cpus, $gpu, $storageTotal, $storageUsed, $usageRate, $shutdownTimeoutInHours, $performAutoSnapshot, $autoSnapshotFrequency, $autoSnapshotSaveCount, $agentType, $dtCreated, $state, $networkId, $privateIpAddress, $publicIpAddress, $region, $userId, $teamId, $scriptId, $dtLastRun)
 
 List information about all machines available
 
@@ -130,10 +130,33 @@ Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfigu
 // Gamingsolved\Paperspace\Api\Client\Version0_1_3\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 $api_instance = new Gamingsolved\Paperspace\Api\Client\Version0_1_3\Api\MachinesApi(new \Http\Adapter\Guzzle6\Client());
-$listMachinesParams = new \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams(); // \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams | An optional filter object to limit the returned machine objects
+$machineId = "machineId_example"; // string | Optional machine id to match on
+$name = "name_example"; // string | Optional name to match on
+$os = "os_example"; // string | Optional os to match on
+$ram = "ram_example"; // string | Optional ram value to match on
+$cpus = 56; // int | Optional cpu count to match on
+$gpu = "gpu_example"; // string | Optional gpu to match on
+$storageTotal = "storageTotal_example"; // string | Optional storageTotal value to match on
+$storageUsed = "storageUsed_example"; // string | Optional storageUsed value to match on
+$usageRate = "usageRate_example"; // string | Optional usageRate value to match on
+$shutdownTimeoutInHours = 56; // int | Optional shutdownTimeoutInHours value to match on
+$performAutoSnapshot = true; // bool | Optional performAutoSnapshot value to match on, either true or false
+$autoSnapshotFrequency = "autoSnapshotFrequency_example"; // string | Optional autoSnapshotFrequency value to match on
+$autoSnapshotSaveCount = 56; // int | Optional autoSnapshotSaveCount value to match on
+$agentType = "agentType_example"; // string | Optional agentType value to match on
+$dtCreated = "dtCreated_example"; // string | Optional datatime value to match on (example: 2017-02-16T20:26:54.880Z)
+$state = "state_example"; // string | Optional state value to match on
+$networkId = "networkId_example"; // string | Optional networkId value to match on
+$privateIpAddress = "privateIpAddress_example"; // string | Optional privateIpAddress value to match on
+$publicIpAddress = "publicIpAddress_example"; // string | Optional publicIpAddress value to match on
+$region = "region_example"; // string | Optional region to match on
+$userId = "userId_example"; // string | Optional userId value to match on
+$teamId = "teamId_example"; // string | Optional teamId value to match on
+$scriptId = "scriptId_example"; // string | Optional scriptId value to match on
+$dtLastRun = "dtLastRun_example"; // string | Optional script datatime last run value to match on (example: 2017-02-16T20:26:54.880Z)
 
 try {
-    $result = $api_instance->listMachines($listMachinesParams);
+    $result = $api_instance->listMachines($machineId, $name, $os, $ram, $cpus, $gpu, $storageTotal, $storageUsed, $usageRate, $shutdownTimeoutInHours, $performAutoSnapshot, $autoSnapshotFrequency, $autoSnapshotSaveCount, $agentType, $dtCreated, $state, $networkId, $privateIpAddress, $publicIpAddress, $region, $userId, $teamId, $scriptId, $dtLastRun);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MachinesApi->listMachines: ', $e->getMessage(), PHP_EOL;
@@ -145,7 +168,30 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **listMachinesParams** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams**](../Model/ListMachinesParams.md)| An optional filter object to limit the returned machine objects | [optional]
+ **machineId** | **string**| Optional machine id to match on | [optional]
+ **name** | **string**| Optional name to match on | [optional]
+ **os** | **string**| Optional os to match on | [optional]
+ **ram** | **string**| Optional ram value to match on | [optional]
+ **cpus** | **int**| Optional cpu count to match on | [optional]
+ **gpu** | **string**| Optional gpu to match on | [optional]
+ **storageTotal** | **string**| Optional storageTotal value to match on | [optional]
+ **storageUsed** | **string**| Optional storageUsed value to match on | [optional]
+ **usageRate** | **string**| Optional usageRate value to match on | [optional]
+ **shutdownTimeoutInHours** | **int**| Optional shutdownTimeoutInHours value to match on | [optional]
+ **performAutoSnapshot** | **bool**| Optional performAutoSnapshot value to match on, either true or false | [optional]
+ **autoSnapshotFrequency** | **string**| Optional autoSnapshotFrequency value to match on | [optional]
+ **autoSnapshotSaveCount** | **int**| Optional autoSnapshotSaveCount value to match on | [optional]
+ **agentType** | **string**| Optional agentType value to match on | [optional]
+ **dtCreated** | **string**| Optional datatime value to match on (example: 2017-02-16T20:26:54.880Z) | [optional]
+ **state** | **string**| Optional state value to match on | [optional]
+ **networkId** | **string**| Optional networkId value to match on | [optional]
+ **privateIpAddress** | **string**| Optional privateIpAddress value to match on | [optional]
+ **publicIpAddress** | **string**| Optional publicIpAddress value to match on | [optional]
+ **region** | **string**| Optional region to match on | [optional]
+ **userId** | **string**| Optional userId value to match on | [optional]
+ **teamId** | **string**| Optional teamId value to match on | [optional]
+ **scriptId** | **string**| Optional scriptId value to match on | [optional]
+ **dtLastRun** | **string**| Optional script datatime last run value to match on (example: 2017-02-16T20:26:54.880Z) | [optional]
 
 ### Return type
 

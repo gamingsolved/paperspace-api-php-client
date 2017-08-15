@@ -512,14 +512,37 @@ class MachinesApi
      *
      * List information about all machines available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $listMachinesParams An optional filter object to limit the returned machine objects (optional)
+     * @param string $machineId Optional machine id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $ram Optional ram value to match on (optional)
+     * @param int $cpus Optional cpu count to match on (optional)
+     * @param string $gpu Optional gpu to match on (optional)
+     * @param string $storageTotal Optional storageTotal value to match on (optional)
+     * @param string $storageUsed Optional storageUsed value to match on (optional)
+     * @param string $usageRate Optional usageRate value to match on (optional)
+     * @param int $shutdownTimeoutInHours Optional shutdownTimeoutInHours value to match on (optional)
+     * @param bool $performAutoSnapshot Optional performAutoSnapshot value to match on, either true or false (optional)
+     * @param string $autoSnapshotFrequency Optional autoSnapshotFrequency value to match on (optional)
+     * @param int $autoSnapshotSaveCount Optional autoSnapshotSaveCount value to match on (optional)
+     * @param string $agentType Optional agentType value to match on (optional)
+     * @param string $dtCreated Optional datatime value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $state Optional state value to match on (optional)
+     * @param string $networkId Optional networkId value to match on (optional)
+     * @param string $privateIpAddress Optional privateIpAddress value to match on (optional)
+     * @param string $publicIpAddress Optional publicIpAddress value to match on (optional)
+     * @param string $region Optional region to match on (optional)
+     * @param string $userId Optional userId value to match on (optional)
+     * @param string $teamId Optional teamId value to match on (optional)
+     * @param string $scriptId Optional scriptId value to match on (optional)
+     * @param string $dtLastRun Optional script datatime last run value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]
      */
-    public function listMachines($listMachinesParams = null)
+    public function listMachines($machineId = null, $name = null, $os = null, $ram = null, $cpus = null, $gpu = null, $storageTotal = null, $storageUsed = null, $usageRate = null, $shutdownTimeoutInHours = null, $performAutoSnapshot = null, $autoSnapshotFrequency = null, $autoSnapshotSaveCount = null, $agentType = null, $dtCreated = null, $state = null, $networkId = null, $privateIpAddress = null, $publicIpAddress = null, $region = null, $userId = null, $teamId = null, $scriptId = null, $dtLastRun = null)
     {
-        list($response) = $this->listMachinesWithHttpInfo($listMachinesParams);
+        list($response) = $this->listMachinesWithHttpInfo($machineId, $name, $os, $ram, $cpus, $gpu, $storageTotal, $storageUsed, $usageRate, $shutdownTimeoutInHours, $performAutoSnapshot, $autoSnapshotFrequency, $autoSnapshotSaveCount, $agentType, $dtCreated, $state, $networkId, $privateIpAddress, $publicIpAddress, $region, $userId, $teamId, $scriptId, $dtLastRun);
         return $response;
     }
 
@@ -528,15 +551,38 @@ class MachinesApi
      *
      * List information about all machines available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $listMachinesParams An optional filter object to limit the returned machine objects (optional)
+     * @param string $machineId Optional machine id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $ram Optional ram value to match on (optional)
+     * @param int $cpus Optional cpu count to match on (optional)
+     * @param string $gpu Optional gpu to match on (optional)
+     * @param string $storageTotal Optional storageTotal value to match on (optional)
+     * @param string $storageUsed Optional storageUsed value to match on (optional)
+     * @param string $usageRate Optional usageRate value to match on (optional)
+     * @param int $shutdownTimeoutInHours Optional shutdownTimeoutInHours value to match on (optional)
+     * @param bool $performAutoSnapshot Optional performAutoSnapshot value to match on, either true or false (optional)
+     * @param string $autoSnapshotFrequency Optional autoSnapshotFrequency value to match on (optional)
+     * @param int $autoSnapshotSaveCount Optional autoSnapshotSaveCount value to match on (optional)
+     * @param string $agentType Optional agentType value to match on (optional)
+     * @param string $dtCreated Optional datatime value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $state Optional state value to match on (optional)
+     * @param string $networkId Optional networkId value to match on (optional)
+     * @param string $privateIpAddress Optional privateIpAddress value to match on (optional)
+     * @param string $publicIpAddress Optional publicIpAddress value to match on (optional)
+     * @param string $region Optional region to match on (optional)
+     * @param string $userId Optional userId value to match on (optional)
+     * @param string $teamId Optional teamId value to match on (optional)
+     * @param string $scriptId Optional scriptId value to match on (optional)
+     * @param string $dtLastRun Optional script datatime last run value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMachinesWithHttpInfo($listMachinesParams = null)
+    public function listMachinesWithHttpInfo($machineId = null, $name = null, $os = null, $ram = null, $cpus = null, $gpu = null, $storageTotal = null, $storageUsed = null, $usageRate = null, $shutdownTimeoutInHours = null, $performAutoSnapshot = null, $autoSnapshotFrequency = null, $autoSnapshotSaveCount = null, $agentType = null, $dtCreated = null, $state = null, $networkId = null, $privateIpAddress = null, $publicIpAddress = null, $region = null, $userId = null, $teamId = null, $scriptId = null, $dtLastRun = null)
     {
         $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]';
-        $request = $this->listMachinesRequest($listMachinesParams);
+        $request = $this->listMachinesRequest($machineId, $name, $os, $ram, $cpus, $gpu, $storageTotal, $storageUsed, $usageRate, $shutdownTimeoutInHours, $performAutoSnapshot, $autoSnapshotFrequency, $autoSnapshotSaveCount, $agentType, $dtCreated, $state, $networkId, $privateIpAddress, $publicIpAddress, $region, $userId, $teamId, $scriptId, $dtLastRun);
 
         try {
 
@@ -593,13 +639,36 @@ class MachinesApi
      *
      * List information about all machines available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $listMachinesParams An optional filter object to limit the returned machine objects (optional)
+     * @param string $machineId Optional machine id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $ram Optional ram value to match on (optional)
+     * @param int $cpus Optional cpu count to match on (optional)
+     * @param string $gpu Optional gpu to match on (optional)
+     * @param string $storageTotal Optional storageTotal value to match on (optional)
+     * @param string $storageUsed Optional storageUsed value to match on (optional)
+     * @param string $usageRate Optional usageRate value to match on (optional)
+     * @param int $shutdownTimeoutInHours Optional shutdownTimeoutInHours value to match on (optional)
+     * @param bool $performAutoSnapshot Optional performAutoSnapshot value to match on, either true or false (optional)
+     * @param string $autoSnapshotFrequency Optional autoSnapshotFrequency value to match on (optional)
+     * @param int $autoSnapshotSaveCount Optional autoSnapshotSaveCount value to match on (optional)
+     * @param string $agentType Optional agentType value to match on (optional)
+     * @param string $dtCreated Optional datatime value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $state Optional state value to match on (optional)
+     * @param string $networkId Optional networkId value to match on (optional)
+     * @param string $privateIpAddress Optional privateIpAddress value to match on (optional)
+     * @param string $publicIpAddress Optional publicIpAddress value to match on (optional)
+     * @param string $region Optional region to match on (optional)
+     * @param string $userId Optional userId value to match on (optional)
+     * @param string $teamId Optional teamId value to match on (optional)
+     * @param string $scriptId Optional scriptId value to match on (optional)
+     * @param string $dtLastRun Optional script datatime last run value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMachinesAsync($listMachinesParams = null)
+    public function listMachinesAsync($machineId = null, $name = null, $os = null, $ram = null, $cpus = null, $gpu = null, $storageTotal = null, $storageUsed = null, $usageRate = null, $shutdownTimeoutInHours = null, $performAutoSnapshot = null, $autoSnapshotFrequency = null, $autoSnapshotSaveCount = null, $agentType = null, $dtCreated = null, $state = null, $networkId = null, $privateIpAddress = null, $publicIpAddress = null, $region = null, $userId = null, $teamId = null, $scriptId = null, $dtLastRun = null)
     {
-        return $this->listMachinesAsyncWithHttpInfo($listMachinesParams)->then(function ($response) {
+        return $this->listMachinesAsyncWithHttpInfo($machineId, $name, $os, $ram, $cpus, $gpu, $storageTotal, $storageUsed, $usageRate, $shutdownTimeoutInHours, $performAutoSnapshot, $autoSnapshotFrequency, $autoSnapshotSaveCount, $agentType, $dtCreated, $state, $networkId, $privateIpAddress, $publicIpAddress, $region, $userId, $teamId, $scriptId, $dtLastRun)->then(function ($response) {
             return $response[0];
         });
     }
@@ -609,14 +678,37 @@ class MachinesApi
      *
      * List information about all machines available
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $listMachinesParams An optional filter object to limit the returned machine objects (optional)
+     * @param string $machineId Optional machine id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $ram Optional ram value to match on (optional)
+     * @param int $cpus Optional cpu count to match on (optional)
+     * @param string $gpu Optional gpu to match on (optional)
+     * @param string $storageTotal Optional storageTotal value to match on (optional)
+     * @param string $storageUsed Optional storageUsed value to match on (optional)
+     * @param string $usageRate Optional usageRate value to match on (optional)
+     * @param int $shutdownTimeoutInHours Optional shutdownTimeoutInHours value to match on (optional)
+     * @param bool $performAutoSnapshot Optional performAutoSnapshot value to match on, either true or false (optional)
+     * @param string $autoSnapshotFrequency Optional autoSnapshotFrequency value to match on (optional)
+     * @param int $autoSnapshotSaveCount Optional autoSnapshotSaveCount value to match on (optional)
+     * @param string $agentType Optional agentType value to match on (optional)
+     * @param string $dtCreated Optional datatime value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $state Optional state value to match on (optional)
+     * @param string $networkId Optional networkId value to match on (optional)
+     * @param string $privateIpAddress Optional privateIpAddress value to match on (optional)
+     * @param string $publicIpAddress Optional publicIpAddress value to match on (optional)
+     * @param string $region Optional region to match on (optional)
+     * @param string $userId Optional userId value to match on (optional)
+     * @param string $teamId Optional teamId value to match on (optional)
+     * @param string $scriptId Optional scriptId value to match on (optional)
+     * @param string $dtLastRun Optional script datatime last run value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMachinesAsyncWithHttpInfo($listMachinesParams = null)
+    public function listMachinesAsyncWithHttpInfo($machineId = null, $name = null, $os = null, $ram = null, $cpus = null, $gpu = null, $storageTotal = null, $storageUsed = null, $usageRate = null, $shutdownTimeoutInHours = null, $performAutoSnapshot = null, $autoSnapshotFrequency = null, $autoSnapshotSaveCount = null, $agentType = null, $dtCreated = null, $state = null, $networkId = null, $privateIpAddress = null, $publicIpAddress = null, $region = null, $userId = null, $teamId = null, $scriptId = null, $dtLastRun = null)
     {
         $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]';
-        $request = $this->listMachinesRequest($listMachinesParams);
+        $request = $this->listMachinesRequest($machineId, $name, $os, $ram, $cpus, $gpu, $storageTotal, $storageUsed, $usageRate, $shutdownTimeoutInHours, $performAutoSnapshot, $autoSnapshotFrequency, $autoSnapshotSaveCount, $agentType, $dtCreated, $state, $networkId, $privateIpAddress, $publicIpAddress, $region, $userId, $teamId, $scriptId, $dtLastRun);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
             $responseBody = $response->getBody();
@@ -649,11 +741,34 @@ class MachinesApi
     /**
      * Create request for operation 'listMachines'
      *
-     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\ListMachinesParams $listMachinesParams An optional filter object to limit the returned machine objects (optional)
+     * @param string $machineId Optional machine id to match on (optional)
+     * @param string $name Optional name to match on (optional)
+     * @param string $os Optional os to match on (optional)
+     * @param string $ram Optional ram value to match on (optional)
+     * @param int $cpus Optional cpu count to match on (optional)
+     * @param string $gpu Optional gpu to match on (optional)
+     * @param string $storageTotal Optional storageTotal value to match on (optional)
+     * @param string $storageUsed Optional storageUsed value to match on (optional)
+     * @param string $usageRate Optional usageRate value to match on (optional)
+     * @param int $shutdownTimeoutInHours Optional shutdownTimeoutInHours value to match on (optional)
+     * @param bool $performAutoSnapshot Optional performAutoSnapshot value to match on, either true or false (optional)
+     * @param string $autoSnapshotFrequency Optional autoSnapshotFrequency value to match on (optional)
+     * @param int $autoSnapshotSaveCount Optional autoSnapshotSaveCount value to match on (optional)
+     * @param string $agentType Optional agentType value to match on (optional)
+     * @param string $dtCreated Optional datatime value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
+     * @param string $state Optional state value to match on (optional)
+     * @param string $networkId Optional networkId value to match on (optional)
+     * @param string $privateIpAddress Optional privateIpAddress value to match on (optional)
+     * @param string $publicIpAddress Optional publicIpAddress value to match on (optional)
+     * @param string $region Optional region to match on (optional)
+     * @param string $userId Optional userId value to match on (optional)
+     * @param string $teamId Optional teamId value to match on (optional)
+     * @param string $scriptId Optional scriptId value to match on (optional)
+     * @param string $dtLastRun Optional script datatime last run value to match on (example: 2017-02-16T20:26:54.880Z) (optional)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listMachinesRequest($listMachinesParams = null)
+    protected function listMachinesRequest($machineId = null, $name = null, $os = null, $ram = null, $cpus = null, $gpu = null, $storageTotal = null, $storageUsed = null, $usageRate = null, $shutdownTimeoutInHours = null, $performAutoSnapshot = null, $autoSnapshotFrequency = null, $autoSnapshotSaveCount = null, $agentType = null, $dtCreated = null, $state = null, $networkId = null, $privateIpAddress = null, $publicIpAddress = null, $region = null, $userId = null, $teamId = null, $scriptId = null, $dtLastRun = null)
     {
 
         $resourcePath = '/machines/getMachines';
@@ -663,13 +778,104 @@ class MachinesApi
         $httpBody = '';
         $multipart = false;
 
-
-
-        // body params
-        $_tempBody = null;
-        if (isset($listMachinesParams)) {
-            $_tempBody = $listMachinesParams;
+        // query params
+        if ($machineId !== null) {
+            $queryParams['machineId'] = ObjectSerializer::toQueryValue($machineId);
         }
+        // query params
+        if ($name !== null) {
+            $queryParams['name'] = ObjectSerializer::toQueryValue($name);
+        }
+        // query params
+        if ($os !== null) {
+            $queryParams['os'] = ObjectSerializer::toQueryValue($os);
+        }
+        // query params
+        if ($ram !== null) {
+            $queryParams['ram'] = ObjectSerializer::toQueryValue($ram);
+        }
+        // query params
+        if ($cpus !== null) {
+            $queryParams['cpus'] = ObjectSerializer::toQueryValue($cpus);
+        }
+        // query params
+        if ($gpu !== null) {
+            $queryParams['gpu'] = ObjectSerializer::toQueryValue($gpu);
+        }
+        // query params
+        if ($storageTotal !== null) {
+            $queryParams['storageTotal'] = ObjectSerializer::toQueryValue($storageTotal);
+        }
+        // query params
+        if ($storageUsed !== null) {
+            $queryParams['storageUsed'] = ObjectSerializer::toQueryValue($storageUsed);
+        }
+        // query params
+        if ($usageRate !== null) {
+            $queryParams['usageRate'] = ObjectSerializer::toQueryValue($usageRate);
+        }
+        // query params
+        if ($shutdownTimeoutInHours !== null) {
+            $queryParams['shutdownTimeoutInHours'] = ObjectSerializer::toQueryValue($shutdownTimeoutInHours);
+        }
+        // query params
+        if ($performAutoSnapshot !== null) {
+            $queryParams['performAutoSnapshot'] = ObjectSerializer::toQueryValue($performAutoSnapshot);
+        }
+        // query params
+        if ($autoSnapshotFrequency !== null) {
+            $queryParams['autoSnapshotFrequency'] = ObjectSerializer::toQueryValue($autoSnapshotFrequency);
+        }
+        // query params
+        if ($autoSnapshotSaveCount !== null) {
+            $queryParams['autoSnapshotSaveCount'] = ObjectSerializer::toQueryValue($autoSnapshotSaveCount);
+        }
+        // query params
+        if ($agentType !== null) {
+            $queryParams['agentType'] = ObjectSerializer::toQueryValue($agentType);
+        }
+        // query params
+        if ($dtCreated !== null) {
+            $queryParams['dtCreated'] = ObjectSerializer::toQueryValue($dtCreated);
+        }
+        // query params
+        if ($state !== null) {
+            $queryParams['state'] = ObjectSerializer::toQueryValue($state);
+        }
+        // query params
+        if ($networkId !== null) {
+            $queryParams['networkId'] = ObjectSerializer::toQueryValue($networkId);
+        }
+        // query params
+        if ($privateIpAddress !== null) {
+            $queryParams['privateIpAddress'] = ObjectSerializer::toQueryValue($privateIpAddress);
+        }
+        // query params
+        if ($publicIpAddress !== null) {
+            $queryParams['publicIpAddress'] = ObjectSerializer::toQueryValue($publicIpAddress);
+        }
+        // query params
+        if ($region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($region);
+        }
+        // query params
+        if ($userId !== null) {
+            $queryParams['userId'] = ObjectSerializer::toQueryValue($userId);
+        }
+        // query params
+        if ($teamId !== null) {
+            $queryParams['teamId'] = ObjectSerializer::toQueryValue($teamId);
+        }
+        // query params
+        if ($scriptId !== null) {
+            $queryParams['scriptId'] = ObjectSerializer::toQueryValue($scriptId);
+        }
+        // query params
+        if ($dtLastRun !== null) {
+            $queryParams['dtLastRun'] = ObjectSerializer::toQueryValue($dtLastRun);
+        }
+
+
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
