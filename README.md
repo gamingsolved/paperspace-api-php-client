@@ -68,6 +68,41 @@ API:
 | 0.1.1           | 0.1.3                  | only supports `machines/create,list,show,start,stop,restart,destroy` and `templates/list`) |
 
 
+
+## Changelog
+All notable changes to this project will be documented in this section.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to
+[Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [0.1.2] - 2017-08-15
+### Added
+- Changelog
+
+### Changed
+- Removed redundancy around Region in API definition
+
+### Fixed
+- templates/list filtering (#1)
+- machines/list filtering (#2)
+
+## [0.1.1] - 2017-08-14
+### Changed
+- Bumped Composer dependencies to latest versions
+- Improved API definition metadata
+
+## [0.1.0] - 2017-08-14
+### Changed
+- Finished first Packagist release
+
+[Unreleased]: https://github.com/gamingsolved/paperspace-api-php-client/compare/0.1.2...HEAD
+[0.1.2]: https://github.com/gamingsolved/paperspace-api-php-client/compare/0.1.1...0.1.2
+[0.1.1]: https://github.com/gamingsolved/paperspace-api-php-client/compare/0.1.0...0.1.1
+[0.1.0]: https://github.com/gamingsolved/paperspace-api-php-client/compare/015c439...0.1.1
+
+
 ## How to modify and extend the API specifications
 
 The PHP API clients provided by this project are generated automatically as far as possible (see below). To do so, this
