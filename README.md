@@ -65,7 +65,7 @@ API:
 
 | Project version | Paperspace API version | Notes                                                                                      |
 |-----------------|------------------------|--------------------------------------------------------------------------------------------|
-| 0.1.1           | 0.1.3                  | only supports `machines/create,list,show,start,stop,restart,destroy` and `templates/list`) |
+| >= 0.1.0        | 0.1.3                  | only supports `machines/create,list,show,start,stop,restart,destroy` and `templates/list`) |
 
 
 
