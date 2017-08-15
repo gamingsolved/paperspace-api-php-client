@@ -61,7 +61,7 @@ class Template implements ArrayAccess
         'dtCreated' => 'string',
         'teamId' => 'string',
         'userId' => 'string',
-        'region' => 'string'
+        'region' => '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region'
     ];
 
     /**
@@ -381,7 +381,7 @@ class Template implements ArrayAccess
 
     /**
      * Gets region
-     * @return string
+     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region
      */
     public function getRegion()
     {
@@ -390,7 +390,7 @@ class Template implements ArrayAccess
 
     /**
      * Sets region
-     * @param string $region Only for team-owned templates
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region $region Only for team-owned templates
      * @return $this
      */
     public function setRegion($region)

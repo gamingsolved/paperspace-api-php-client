@@ -326,7 +326,10 @@
             "in": "query",
             "type": "string",
             "description": "Optional region to match on",
-            "required": false
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Region"
+            }
           }
         ],
         "responses": {
@@ -344,6 +347,13 @@
     }
   },
   "definitions": {
+    "Region": {
+      "type": "string",
+      "enum": [
+        "East Coast (NY2)",
+        "West Coast (CA1)"
+      ]
+    },
     "Machine": {
       "type": "object",
       "properties": {
@@ -461,13 +471,7 @@
           "example": "169.255.255.254"
         },
         "region": {
-          "type": "string",
-          "description": "",
-          "example": "East Coast (NY2)",
-          "enum": [
-            "East Coast (NY2)",
-            "West Coast (CA1)"
-          ]
+          "$ref": "#/definitions/Region"
         },
         "userId": {
           "type": "string",
@@ -539,7 +543,8 @@
         "region": {
           "type": "string",
           "description": "Only for team-owned templates",
-          "example": "East Coast (NY2)"
+          "example": "East Coast (NY2)",
+          "$ref": "#/definitions/Region"
         }
       }
     },
@@ -555,12 +560,7 @@
       ],
       "properties": {
         "region": {
-          "type": "string",
-          "description": "Name of the region",
-          "enum": [
-            "East Coast (NY2)",
-            "West Coast (CA1)"
-          ]
+          "$ref": "#/definitions/Region"
         },
         "machineType": {
           "type": "string",

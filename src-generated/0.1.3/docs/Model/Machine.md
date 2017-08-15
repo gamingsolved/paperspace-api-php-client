@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **networkId** | **string** |  | [optional] 
 **privateIpAddress** | **string** |  | [optional] 
 **publicIpAddress** | **string** |  | [optional] 
-**region** | **string** |  | [optional] 
+**region** | [**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region**](Region.md) |  | [optional] 
 **userId** | **string** |  | [optional] 
 **teamId** | **string** |  | [optional] 
 **scriptId** | **string** |  | [optional] 

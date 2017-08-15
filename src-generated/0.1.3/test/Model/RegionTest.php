@@ -1,6 +1,6 @@
 <?php
 /**
- * ListTemplatesParamsTest
+ * RegionTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Gamingsolved\Paperspace\Api\Client\Version0_1_3;
 
 /**
- * ListTemplatesParamsTest Class Doc Comment
+ * RegionTest Class Doc Comment
  *
  * @category    Class */
-// * @description ListTemplatesParams
+// * @description Region
 /**
  * @package     Gamingsolved\Paperspace\Api\Client\Version0_1_3
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ListTemplatesParamsTest extends \PHPUnit_Framework_TestCase
+class RegionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,65 +71,9 @@ class ListTemplatesParamsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ListTemplatesParams"
+     * Test "Region"
      */
-    public function testListTemplatesParams()
-    {
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-    }
-
-    /**
-     * Test attribute "label"
-     */
-    public function testPropertyLabel()
-    {
-    }
-
-    /**
-     * Test attribute "os"
-     */
-    public function testPropertyOs()
-    {
-    }
-
-    /**
-     * Test attribute "dtCreated"
-     */
-    public function testPropertyDtCreated()
-    {
-    }
-
-    /**
-     * Test attribute "teamId"
-     */
-    public function testPropertyTeamId()
-    {
-    }
-
-    /**
-     * Test attribute "userId"
-     */
-    public function testPropertyUserId()
-    {
-    }
-
-    /**
-     * Test attribute "region"
-     */
-    public function testPropertyRegion()
+    public function testRegion()
     {
     }
 }

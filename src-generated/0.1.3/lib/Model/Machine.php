@@ -74,7 +74,7 @@ class Machine implements ArrayAccess
         'networkId' => 'string',
         'privateIpAddress' => 'string',
         'publicIpAddress' => 'string',
-        'region' => 'string',
+        'region' => '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region',
         'userId' => 'string',
         'teamId' => 'string',
         'scriptId' => 'string',
@@ -239,8 +239,6 @@ class Machine implements ArrayAccess
     const STATE_READY = 'ready';
     const STATE_PROVISIONING = 'provisioning';
     const STATE_OFF = 'off';
-    const REGION_EAST_COAST__NY2 = 'East Coast (NY2)';
-    const REGION_WEST_COAST__CA1 = 'West Coast (CA1)';
     
 
     
@@ -254,18 +252,6 @@ class Machine implements ArrayAccess
             self::STATE_READY,
             self::STATE_PROVISIONING,
             self::STATE_OFF,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getRegionAllowableValues()
-    {
-        return [
-            self::REGION_EAST_COAST__NY2,
-            self::REGION_WEST_COAST__CA1,
         ];
     }
     
@@ -326,14 +312,6 @@ class Machine implements ArrayAccess
             );
         }
 
-        $allowed_values = $this->getRegionAllowableValues();
-        if (!in_array($this->container['region'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'region', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -348,10 +326,6 @@ class Machine implements ArrayAccess
 
         $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getRegionAllowableValues();
-        if (!in_array($this->container['region'], $allowed_values)) {
             return false;
         }
         return true;
@@ -789,7 +763,7 @@ class Machine implements ArrayAccess
 
     /**
      * Gets region
-     * @return string
+     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region
      */
     public function getRegion()
     {
@@ -798,20 +772,11 @@ class Machine implements ArrayAccess
 
     /**
      * Sets region
-     * @param string $region 
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region $region
      * @return $this
      */
     public function setRegion($region)
     {
-        $allowed_values = $this->getRegionAllowableValues();
-        if (!is_null($region) && !in_array($region, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'region', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['region'] = $region;
 
         return $this;

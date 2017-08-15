@@ -96,8 +96,8 @@ Class | Method | HTTP request | Description
 
  - [CreateMachineParams](docs/Model/CreateMachineParams.md)
  - [ListMachinesParams](docs/Model/ListMachinesParams.md)
- - [ListTemplatesParams](docs/Model/ListTemplatesParams.md)
  - [Machine](docs/Model/Machine.md)
+ - [Region](docs/Model/Region.md)
  - [Template](docs/Model/Template.md)
 
 

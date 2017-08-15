@@ -54,7 +54,7 @@ class CreateMachineParams implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'region' => 'string',
+        'region' => '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region',
         'machineType' => 'string',
         'size' => 'int',
         'billingType' => 'string',
@@ -191,8 +191,6 @@ class CreateMachineParams implements ArrayAccess
         return self::$getters;
     }
 
-    const REGION_EAST_COAST__NY2 = 'East Coast (NY2)';
-    const REGION_WEST_COAST__CA1 = 'West Coast (CA1)';
     const MACHINE_TYPE_AIR = 'Air';
     const MACHINE_TYPE_STANDARD = 'Standard';
     const MACHINE_TYPE_PRO = 'Pro';
@@ -213,18 +211,6 @@ class CreateMachineParams implements ArrayAccess
     const BILLING_TYPE_MONTHLY = 'monthly';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getRegionAllowableValues()
-    {
-        return [
-            self::REGION_EAST_COAST__NY2,
-            self::REGION_WEST_COAST__CA1,
-        ];
-    }
     
     /**
      * Gets allowable values of the enum
@@ -307,14 +293,6 @@ class CreateMachineParams implements ArrayAccess
         if ($this->container['region'] === null) {
             $invalid_properties[] = "'region' can't be null";
         }
-        $allowed_values = $this->getRegionAllowableValues();
-        if (!in_array($this->container['region'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'region', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         if ($this->container['machineType'] === null) {
             $invalid_properties[] = "'machineType' can't be null";
         }
@@ -361,10 +339,6 @@ class CreateMachineParams implements ArrayAccess
         if ($this->container['region'] === null) {
             return false;
         }
-        $allowed_values = $this->getRegionAllowableValues();
-        if (!in_array($this->container['region'], $allowed_values)) {
-            return false;
-        }
         if ($this->container['machineType'] === null) {
             return false;
         }
@@ -394,7 +368,7 @@ class CreateMachineParams implements ArrayAccess
 
     /**
      * Gets region
-     * @return string
+     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region
      */
     public function getRegion()
     {
@@ -403,20 +377,11 @@ class CreateMachineParams implements ArrayAccess
 
     /**
      * Sets region
-     * @param string $region Name of the region
+     * @param \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Region $region
      * @return $this
      */
     public function setRegion($region)
     {
-        $allowed_values = $this->getRegionAllowableValues();
-        if (!in_array($region, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'region', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['region'] = $region;
 
         return $this;
