@@ -2,6 +2,10 @@
 
 Copyright (c) 2017 Manuel Kiessling under [an MIT license](LICENSE).
 
+[![Total Downloads](https://poser.pugx.org/gamingsolved/paperspace-api-client/downloads)](https://packagist.org/packages/gamingsolved/paperspace-api-client)
+[![Latest Stable Version](https://poser.pugx.org/gamingsolved/paperspace-api-client/v/stable)](https://packagist.org/packages/gamingsolved/paperspace-api-client)
+[![Latest Unstable Version](https://poser.pugx.org/gamingsolved/paperspace-api-client/v/unstable)](https://packagist.org/packages/gamingsolved/paperspace-api-client)
+
 
 ## About
 
@@ -9,7 +13,7 @@ This project maintains inofficial *Open API Specification* compatible specs of t
 [Paperspace API](https://paperspace.github.io/paperspace-node/index.html), and uses these specs to auto-generate PHP
 clients based on [Guzzle](https://github.com/guzzle/guzzle), which can be used to work with the API.
 
-The resulting clients are provided as a library through the Composer ecosystem. 
+The resulting clients are provided as a [Packagist library](https://packagist.org/packages/gamingsolved/paperspace-api-client) for the Composer ecosystem. 
 
 You can interactively explore the Swagger documentation of Paperspace API v0.1.3
 [here](https://gamingsolved.github.io/paperspace-api-php-client/swagger-docs/0.1.3/).
