@@ -2,9 +2,9 @@
 
 Copyright (c) 2017 Manuel Kiessling under [an MIT license](LICENSE).
 
-[![Total Downloads](https://poser.pugx.org/gamingsolved/paperspace-api-client/downloads)](https://packagist.org/packages/gamingsolved/paperspace-api-client)
+[![Total Downloads](https://poser.pugx.org/gamingsolved/paperspace-api-client/downloads)](https://packagist.org/packages/gamingsolved/paperspace-api-client/stats)
 [![Latest Stable Version](https://poser.pugx.org/gamingsolved/paperspace-api-client/v/stable)](https://packagist.org/packages/gamingsolved/paperspace-api-client)
-[![Latest Unstable Version](https://poser.pugx.org/gamingsolved/paperspace-api-client/v/unstable)](https://packagist.org/packages/gamingsolved/paperspace-api-client)
+[![Latest Unstable Version](https://poser.pugx.org/gamingsolved/paperspace-api-client/v/unstable)](https://packagist.org/packages/gamingsolved/paperspace-api-client#dev-master)
 
 
 ## About
