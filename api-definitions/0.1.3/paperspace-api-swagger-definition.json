@@ -318,10 +318,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Machine"
-              }
+              "$ref": "#/definitions/Machine"
             }
           }
         }

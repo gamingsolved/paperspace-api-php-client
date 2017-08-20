@@ -1143,7 +1143,7 @@ class MachinesApi
      * @param string $machineId Id of the machine to show (required)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]
+     * @return \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine
      */
     public function showMachine($machineId)
     {
@@ -1159,11 +1159,11 @@ class MachinesApi
      * @param string $machineId Id of the machine to show (required)
      * @throws \Gamingsolved\Paperspace\Api\Client\Version0_1_3\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine, HTTP status code, HTTP response headers (array of strings)
      */
     public function showMachineWithHttpInfo($machineId)
     {
-        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]';
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine';
         $request = $this->showMachineRequest($machineId);
 
         try {
@@ -1208,7 +1208,7 @@ class MachinesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1243,7 +1243,7 @@ class MachinesApi
      */
     public function showMachineAsyncWithHttpInfo($machineId)
     {
-        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]';
+        $returnType = '\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine';
         $request = $this->showMachineRequest($machineId);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {

@@ -258,7 +258,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **showMachine**
-> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[] showMachine($machineId)
+> \Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine showMachine($machineId)
 
 Show machine information
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine[]**](../Model/Machine.md)
+[**\Gamingsolved\Paperspace\Api\Client\Version0_1_3\Model\Machine**](../Model/Machine.md)
 
 ### Authorization
 
