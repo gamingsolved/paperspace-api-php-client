@@ -40,7 +40,6 @@
   "security": [
     {
       "APIKeyHeader": [
-
       ]
     }
   ],
