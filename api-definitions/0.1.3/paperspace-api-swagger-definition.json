@@ -39,7 +39,9 @@
   },
   "security": [
     {
-      "APIKeyHeader": []
+      "APIKeyHeader": [
+
+      ]
     }
   ],
   "paths": {
@@ -93,10 +95,6 @@
           "application/json"
         ],
         "parameters": [
-
-
-
-
           {
             "name": "machineId",
             "in": "query",
